@@ -10,6 +10,7 @@ import { DetailSidenavComponent } from './component/detail/detail-sidenav/detail
 import { DetailItemComponent } from './component/detail/detail-item/detail-item.component';
 import { DetailContentComponent } from './component/detail/detail-content/detail-content.component';
 import {MDBBootstrapModule} from 'angular-bootstrap-md';
+import {DetailGroupviewComponent} from './component/detail/detail-groupview/detail-groupview.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import {MDBBootstrapModule} from 'angular-bootstrap-md';
     MainBodyComponent,
     DetailSidenavComponent,
     DetailItemComponent,
-    DetailContentComponent
+    DetailContentComponent,
+    DetailGroupviewComponent
   ],
   imports: [
     BrowserModule,
