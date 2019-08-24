@@ -41,6 +41,16 @@ export class TokenStorageService {
     window.localStorage.setItem(AUTHORITY_KEY, JSON.stringify(authority));
   }
 
+  public getAuthority(): string {
+    this.role = '';
+
+    if (localStorage.getItem(TOKEN_KEY)) {
+      JSON.parse(localStorage.getItem(AUTHORITY_KEY));
+    }
+
+    return this.role;
+  }
+
   public saveAvatarLink(avatarLink: string) {
     window.localStorage.removeItem(AVATAR_LINK_KEY);
     window.localStorage.setItem(AVATAR_LINK_KEY, avatarLink);
