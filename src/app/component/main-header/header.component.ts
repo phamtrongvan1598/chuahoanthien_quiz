@@ -6,6 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
+  form: any = {};
+  isLoggedIn = false;
+  isLogInFailed = false;
+  errorMessage = '';
+  role: string;
 
   constructor() { }
 
