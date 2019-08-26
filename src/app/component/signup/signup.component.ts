@@ -21,7 +21,7 @@ export class SignupComponent implements OnInit {
       password: ['', Validators.minLength(6)],
       address: [''],
       dob: [''],
-      phoneNumber: ['', Validators.required, Validators.pattern(/((09|03|07|08|05)+([0-9]{8})\b)/g)],
+      phoneNumber: ['', Validators.required, Validators.pattern(/0([0-9]{9,10})/)],
       firstName: ['', Validators.required],
       lastName: ['', Validators.required]
     });

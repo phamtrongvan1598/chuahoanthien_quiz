@@ -7,8 +7,8 @@ import {MainBodyComponent} from './component/main-body/main-body.component';
 
 const routes: Routes = [
   {path: '', component: MainBodyComponent},
-  {path: 'register', component: SignupComponent},
-  {path: 'signin', component: SigninComponent}
+  {path: 'api/auth/signup', component: SignupComponent},
+  {path: 'api/auth/signin', component: SigninComponent}
 ];
 
 @NgModule({
