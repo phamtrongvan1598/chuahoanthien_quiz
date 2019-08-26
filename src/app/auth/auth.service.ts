@@ -13,7 +13,7 @@ const httpOption = {
   providedIn: 'root'
 })
 export class AuthService {
-  private readonly API_URL = 'http://localhost:8080/api/signin';
+  private readonly API_URL = 'http://localhost:8080/api/auth/signin';
   token: string;
   header: HttpHeaders;
 

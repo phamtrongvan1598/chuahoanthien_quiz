@@ -36,7 +36,7 @@ export class SigninComponent implements OnInit {
           }
         );
         if (next.token) {
-          this.router.navigateByUrl('');
+          this.router.navigateByUrl('/');
         }
         console.log(next.token);
       }
