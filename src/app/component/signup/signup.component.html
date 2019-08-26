@@ -1,8 +1,8 @@
 <!-- Material form register -->
 <div class="card">
 
-  <h5 class="card-header info-color white-text text-center py-4">
-    <strong>Đăng ký thành viên</strong>
+  <h5 class="card-header young-passion-gradient text-center py-4">
+    <strong style="color: white">Đăng ký thành viên</strong>
   </h5>
 
   <!--Card content-->
@@ -29,42 +29,50 @@
       </div>
 
       <!-- E-mail -->
-      <div class="md-form mt-0">
+      <div class="md-form form-group mt-0">
         <input mdbInput type="email" id="materialRegisterFormEmail" class="form-control" formControlName="email">
         <label for="materialRegisterFormEmail">E-mail</label>
       </div>
 
       <!-- username -->
-      <div class="md-form mt-0">
-        <input mdbInput type="text" id="materialRegisterFormUserName" class="form-control" formControlName="username">
+      <div class="md-form form-group mt-0">
+        <input mdbInput type="text" id="materialRegisterFormUserName" class="form-control"
+               aria-describedby="materialRegisterFormUserNameHelpInline" formControlName="username">
         <label for="materialRegisterFormUserName">Tên người dùng</label>
       </div>
 
       <!-- Password -->
-      <div class="md-form">
+      <div class="md-form form-group">
         <input mdbInput type="password" id="materialRegisterFormPassword" class="form-control"
-               aria-describedby="materialRegisterFormPasswordHelpBlock" formControlName="password">
+               aria-describedby="materialRegisterFormPasswordHelpInline" formControlName="password">
         <label for="materialRegisterFormPassword">Mật khẩu</label>
       </div>
 
+      <!-- Password-confirmation -->
+      <div class="md-form">
+        <input mdbInput type="password" id="materialRegisterFormPassword1" class="form-control"
+               aria-describedby="materialRegisterFormPasswordHelpInline" formControlName="password">
+        <label for="materialRegisterFormPassword1">Nhập lại mật khẩu</label>
+      </div>
+
       <!-- Phone number -->
       <div class="md-form">
-        <input mdbInput type="text" id="materialRegisterFormPhone" class="form-control"
-               aria-describedby="materialRegisterFormPhoneHelpBlock" formControlName="phoneNumber">
+        <input mdbInput type="tel" id="materialRegisterFormPhone" class="form-control"
+               aria-describedby="materialRegisterFormPhoneHelpInline" formControlName="phoneNumber">
         <label for="materialRegisterFormPhone">Số điện thoại</label>
       </div>
 
-      <!-- Phone number -->
+      <!-- Address -->
       <div class="md-form">
         <input mdbInput type="text" id="materialRegisterFormAddress" class="form-control"
-               aria-describedby="materialRegisterFormAddressHelpBlock" formControlName="address">
+               aria-describedby="materialRegisterFormAddressHelpInline" formControlName="address">
         <label for="materialRegisterFormAddress">Địa chỉ</label>
       </div>
 
-      <!-- Phone number -->
+      <!-- DoB -->
       <div class="md-form">
         <input mdbInput type="text" id="materialRegisterFormDate" class="form-control"
-               aria-describedby="materialRegisterFormDateHelpBlock" formControlName="dob">
+               aria-describedby="materialRegisterFormDateHelpInline" formControlName="dob">
         <label for="materialRegisterFormDate">Ngày sinh</label>
       </div>
 
