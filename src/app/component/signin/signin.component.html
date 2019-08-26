@@ -9,17 +9,17 @@
   <div class="card-body px-lg-5 pt-0">
 
     <!-- Form -->
-    <form class="text-center" style="color: #757575;">
+    <form class="text-center" style="color: #757575;" [formGroup]="signinForm" (ngSubmit)="login()" novalidate>
 
       <!-- Email -->
       <div class="md-form">
-        <input mdbInput type="text" id="materialLoginFormUserName" class="form-control">
+        <input mdbInput type="text" id="materialLoginFormUserName" class="form-control" formControlName="username">
         <label for="materialLoginFormUserName">Tên đăng nhập</label>
       </div>
 
       <!-- Password -->
       <div class="md-form">
-        <input mdbInput type="password" id="materialLoginFormPassword" class="form-control">
+        <input mdbInput type="password" id="materialLoginFormPassword" class="form-control" formControlName="password">
         <label for="materialLoginFormPassword">Mật khẩu</label>
       </div>
 
@@ -43,7 +43,7 @@
 
       <!-- Register -->
       <br><br>
-      <p>Chưa phải là thành viên?
+      <p>Chưa phải là thành viên?<br>
         <a routerLink='/api/auth/signup'>Đăng ký ngay</a>
       </p>
 
