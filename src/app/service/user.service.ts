@@ -1,33 +1,19 @@
 import {Injectable} from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Observable} from 'rxjs';
+import {User} from '../model/User';
 
-const httpOption = {
-  headers: new HttpHeaders({'Content-Type': 'application/json'})
-};
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
-  private userUrl = '/api/auth/';
+  private readonly API_URL = 'http://localhost:8080/api/auth/signup';
 
   constructor(private http: HttpClient) {
   }
 
-  getUserBoard(): Observable<string> {
-    return this.http.get(this.userUrl, {responseType: 'text'});
-  }
-
-  register(data: FormData): Observable<any> {
-    return this.http.post(this.userUrl + '/signup', data);
-  }
-
-  login(data: FormData): Observable<any> {
-    return this.http.post(this.userUrl + 'signin', data);
-  }
-
-  logout(id: number): Observable<any> {
-    return this.http.post(this.userUrl + 'signout', id);
+  register(user: User): Observable<User> {
+    return this.http.post<User>(this.API_URL, user);
   }
 }
