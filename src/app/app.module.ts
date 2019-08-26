@@ -13,6 +13,9 @@ import {MDBBootstrapModule} from 'angular-bootstrap-md';
 import {DetailGroupviewComponent} from './component/detail/detail-groupview/detail-groupview.component';
 import { SignupComponent } from './component/signup/signup.component';
 import { SigninComponent } from './component/signin/signin.component';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {HttpClientModule} from '@angular/common/http';
+import { MainComponent } from './component/main/main.component';
 
 @NgModule({
   declarations: [
@@ -26,10 +29,15 @@ import { SigninComponent } from './component/signin/signin.component';
     DetailGroupviewComponent,
     SignupComponent,
     SigninComponent,
+    MainComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
+    ReactiveFormsModule,
+    FormsModule,
+    HttpClientModule,
     MDBBootstrapModule
   ],
   providers: [],

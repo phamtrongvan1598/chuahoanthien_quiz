@@ -2,67 +2,88 @@
 <div class="card">
 
   <h5 class="card-header info-color white-text text-center py-4">
-    <strong>Sign up</strong>
+    <strong>Đăng ký thành viên</strong>
   </h5>
 
   <!--Card content-->
   <div class="card-body px-lg-5 pt-0">
 
     <!-- Form -->
-    <form class="text-center" style="color: #757575;" action="#!">
+    <form class="text-center" style="color: #757575;" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
 
       <div class="form-row">
         <div class="col">
           <!-- First name -->
           <div class="md-form">
-            <input type="text" id="materialRegisterFormFirstName" class="form-control">
-            <label for="materialRegisterFormFirstName">First name</label>
+            <input mdbInput type="text" id="materialRegisterFormFirstName" class="form-control" formControlName="firstName">
+            <label for="materialRegisterFormFirstName">Họ</label>
           </div>
         </div>
         <div class="col">
           <!-- Last name -->
           <div class="md-form">
-            <input type="email" id="materialRegisterFormLastName" class="form-control">
-            <label for="materialRegisterFormLastName">Last name</label>
+            <input mdbInput type="text" id="materialRegisterFormLastName" class="form-control" formControlName="lastName">
+            <label for="materialRegisterFormLastName">Tên</label>
           </div>
         </div>
       </div>
 
       <!-- E-mail -->
       <div class="md-form mt-0">
-        <input type="email" id="materialRegisterFormEmail" class="form-control">
+        <input mdbInput type="email" id="materialRegisterFormEmail" class="form-control" formControlName="email">
         <label for="materialRegisterFormEmail">E-mail</label>
+      </div>
+
+      <!-- username -->
+      <div class="md-form mt-0">
+        <input mdbInput type="text" id="materialRegisterFormUserName" class="form-control" formControlName="username">
+        <label for="materialRegisterFormUserName">Tên người dùng</label>
       </div>
 
       <!-- Password -->
       <div class="md-form">
-        <input type="password" id="materialRegisterFormPassword" class="form-control" aria-describedby="materialRegisterFormPasswordHelpBlock">
-        <label for="materialRegisterFormPassword">Password</label>
+        <input mdbInput type="password" id="materialRegisterFormPassword" class="form-control"
+               aria-describedby="materialRegisterFormPasswordHelpBlock" formControlName="password">
+        <label for="materialRegisterFormPassword">Mật khẩu</label>
         <small id="materialRegisterFormPasswordHelpBlock" class="form-text text-muted mb-4">
-          At least 8 characters and 1 digit
+          At least 6 characters
         </small>
       </div>
 
       <!-- Phone number -->
       <div class="md-form">
-        <input type="password" id="materialRegisterFormPhone" class="form-control" aria-describedby="materialRegisterFormPhoneHelpBlock">
-        <label for="materialRegisterFormPhone">Phone number</label>
-        <small id="materialRegisterFormPhoneHelpBlock" class="form-text text-muted mb-4">
-          Optional - for two step authentication
-        </small>
+        <input mdbInput type="number" id="materialRegisterFormPhone" class="form-control"
+               aria-describedby="materialRegisterFormPhoneHelpBlock" formControlName="phoneNumber">
+        <label for="materialRegisterFormPhone">Số điện thoại</label>
+      </div>
+
+      <!-- Phone number -->
+      <div class="md-form">
+        <input mdbInput type="text" id="materialRegisterFormAddress" class="form-control"
+               aria-describedby="materialRegisterFormAddressHelpBlock" formControlName="address">
+        <label for="materialRegisterFormAddress">Địa chỉ</label>
+      </div>
+
+      <!-- Phone number -->
+      <div class="md-form">
+        <input mdbInput type="text" id="materialRegisterFormDate" class="form-control"
+               aria-describedby="materialRegisterFormDateHelpBlock" formControlName="dob">
+        <label for="materialRegisterFormDate">Ngày sinh</label>
       </div>
 
       <!-- Newsletter -->
-      <div class="form-check">
-        <input type="checkbox" class="form-check-input" id="materialRegisterFormNewsletter">
-        <label class="form-check-label" for="materialRegisterFormNewsletter">Subscribe to our newsletter</label>
-      </div>
+            <div class="form-check">
+              <input mdbInput type="checkbox" class="form-check-input" id="materialRegisterFormNewsletter">
+              <label class="form-check-label" for="materialRegisterFormNewsletter">
+                Tôi đồng ý với các điều khoản của nhà cung cấp dịch vụ</label>
+            </div>
+
 
       <!-- Sign up button -->
-      <button class="btn btn-outline-info btn-rounded btn-block my-4 waves-effect z-depth-0" type="submit">Sign in</button>
+      <button class="btn btn-outline-primary" type="submit">Đăng ký ngay</button>
 
       <!-- Social register -->
-      <p>or sign up with:</p>
+      <p>Hoặc đăng ký với: </p>
 
       <a type="button" class="btn-floating btn-fb btn-sm">
         <i class="fab fa-facebook-f"></i>
@@ -80,9 +101,9 @@
       <hr>
 
       <!-- Terms of service -->
-      <p>By clicking
-        <em>Sign up</em> you agree to our
-        <a href="" target="_blank">terms of service</a>
+      <p>Bằng việc click vào nút
+        <em>Đăng ký ngay</em> bạn đã đồng ý với
+        <a href="" target="_blank">các điều khoản của chúng tôi.</a>
 
     </form>
     <!-- Form -->
