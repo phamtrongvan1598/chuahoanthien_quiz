@@ -11,6 +11,8 @@ import { DetailItemComponent } from './component/detail/detail-item/detail-item.
 import { DetailContentComponent } from './component/detail/detail-content/detail-content.component';
 import {MDBBootstrapModule} from 'angular-bootstrap-md';
 import {DetailGroupviewComponent} from './component/detail/detail-groupview/detail-groupview.component';
+import { SignupComponent } from './component/signup/signup/signup.component';
+import { SiginComponent } from './component/signin/sigin/sigin.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import {DetailGroupviewComponent} from './component/detail/detail-groupview/deta
     DetailSidenavComponent,
     DetailItemComponent,
     DetailContentComponent,
-    DetailGroupviewComponent
+    DetailGroupviewComponent,
+    SignupComponent,
+    SiginComponent
   ],
   imports: [
     BrowserModule,
