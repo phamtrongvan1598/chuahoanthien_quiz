@@ -25,8 +25,8 @@ import {HttpClientModule} from '@angular/common/http';
     DetailSidenavComponent,
     DetailItemComponent,
     // DetailContentComponent,
-    DetailGroupviewComponent
-    DetailContentComponent,
+    DetailGroupviewComponent,
+    // DetailContentComponent,
     DetailGroupviewComponent,
     SignupComponent,
     SigninComponent,

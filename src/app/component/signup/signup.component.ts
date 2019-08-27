@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {UserService} from '../../service/user.service';
 import {Router} from '@angular/router';
@@ -11,17 +11,18 @@ import {Router} from '@angular/router';
 export class SignupComponent implements OnInit {
   registerForm: FormGroup;
 
-  constructor(private fb: FormBuilder, private userService: UserService, private router: Router) { }
+  constructor(private fb: FormBuilder, private userService: UserService, private router: Router) {
+  }
 
   ngOnInit() {
     this.registerForm = this.fb.group({
       id: [Math.round(Math.random() * 100)],
       email: ['', [Validators.required, Validators.email]],
-      username: ['', Validators.required, Validators.minLength(4)],
-      password: ['', Validators.minLength(6)],
+      username: ['', Validators.required],
+      password: ['', Validators.required],
       address: [''],
       dob: [''],
-      phoneNumber: ['', Validators.required, Validators.pattern(/0([0-9]{9,10})/)],
+      phoneNumber: ['', Validators.required],
       // firstName: ['', Validators.required],
       // lastName: ['', Validators.required]
     });
