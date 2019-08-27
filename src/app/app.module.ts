@@ -11,6 +11,10 @@ import { DetailItemComponent } from './component/detail/detail-item/detail-item.
 // import { DetailContentComponent } from './component/detail/detail-content/detail-content.component';
 import {MDBBootstrapModule} from 'angular-bootstrap-md';
 import {DetailGroupviewComponent} from './component/detail/detail-groupview/detail-groupview.component';
+import { SignupComponent } from './component/signup/signup.component';
+import { SigninComponent } from './component/signin/signin.component';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -22,10 +26,18 @@ import {DetailGroupviewComponent} from './component/detail/detail-groupview/deta
     DetailItemComponent,
     // DetailContentComponent,
     DetailGroupviewComponent
+    DetailContentComponent,
+    DetailGroupviewComponent,
+    SignupComponent,
+    SigninComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
+    ReactiveFormsModule,
+    FormsModule,
+    HttpClientModule,
     MDBBootstrapModule
   ],
   providers: [],

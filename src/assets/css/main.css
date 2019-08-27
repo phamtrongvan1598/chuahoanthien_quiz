@@ -49,7 +49,7 @@ u, i, center, dl, dt, dd, ol, ul, li, fieldset,
 form, label, legend, table, caption, tbody,
 tfoot, thead, tr, th, td, article, aside,
 canvas, details, embed, figure, figcaption,
-footer, header, hgroup, menu, nav, output, ruby,
+footer, header, hgroup, menu, output, ruby,
 section, summary, time, mark, audio, video {
   margin: 0;
   padding: 0;
@@ -3777,10 +3777,9 @@ body:before {
   -webkit-justify-content: space-between;
   -ms-justify-content: space-between;
   justify-content: space-between;
-  background: #111111;
-  color: rgba(255, 255, 255, 0.5);
+  background: -webkit-linear-gradient(360deg, #1C1C1C 10%, #494949 360%); background: -moz-linear-gradient(360deg, #1C1C1C 10%, #494949 360%); background: linear-gradient(360deg, #1C1C1C 10%, #494949 360%);  color: rgba(255, 255, 255, 0.5);
   cursor: default;
-  height: 3.25rem;
+  height: 3.50rem;
   left: 0;
   position: fixed;
   top: 0;
