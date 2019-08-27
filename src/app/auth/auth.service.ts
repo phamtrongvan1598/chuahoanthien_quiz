@@ -2,6 +2,8 @@ import {Injectable} from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {FormGroup} from '@angular/forms';
+import {SigninInfoService} from './signin-info.service';
+import {JwtResponse} from './jwt-response';
 
 const httpOption = {
   headers: new HttpHeaders({'Content-Type': 'application/json'})
@@ -12,6 +14,7 @@ const httpOption = {
 })
 export class AuthService {
   private readonly API_URL = 'http://localhost:8080/api/auth/signin';
+  private loginUrl = '/api/auth/signin';
   token: string;
   header: HttpHeaders;
 
@@ -26,5 +29,9 @@ export class AuthService {
       Authorization: `Bearer ${this.token}`
     })
     ;
+  }
+
+  attemptAuth(credentials: SigninInfoService): Observable<JwtResponse> {
+    return this.httpClient.post<JwtResponse>(this.loginUrl, credentials, httpOption);
   }
 }

@@ -35,7 +35,7 @@ export class SignupComponent implements OnInit {
       .subscribe(
         data => {
           console.log('succsess');
-          this.router.navigate(['/api/auth/login']);
+          this.router.navigate(['/api/auth/signin']);
         },
         error => {
           console.log('error');
