@@ -1,8 +1,6 @@
 import {Injectable} from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Observable} from 'rxjs';
-import {JwtResponse} from './jwt-response';
-import {SigninInfoService} from './signin-info.service';
 import {FormGroup} from '@angular/forms';
 
 const httpOption = {
@@ -17,8 +15,8 @@ export class AuthService {
   token: string;
   header: HttpHeaders;
 
-  login(loginForm: FormGroup): Observable<any> {
-    return this.httpClient.post(this.API_URL, JSON.stringify(loginForm), httpOption);
+  login(signinForm: FormGroup): Observable<any> {
+    return this.httpClient.post(this.API_URL, JSON.stringify(signinForm), httpOption);
   }
 
   constructor(private httpClient: HttpClient) {
