@@ -12,8 +12,7 @@ import {HttpHeaders} from '@angular/common/http';
 })
 export class SigninComponent implements OnInit {
   signinForm: FormGroup;
-  // isLoginFailed = false;
-  // errorMessage = '';
+  isSignedIn = false;
 
   constructor(private fb: FormBuilder, private authService: AuthService,
               private router: Router) {
@@ -41,6 +40,7 @@ export class SigninComponent implements OnInit {
           }
         );
         if (next.accessToken) {
+          this.isSignedIn = true;
           this.router.navigateByUrl('');
         }
         console.log(next.accessToken);

@@ -15,6 +15,7 @@ import { SignupComponent } from './component/signup/signup.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import {SigninComponent} from './component/signin/signin.component';
+import { MainBannerComponent } from './component/main-banner/main-banner.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import {SigninComponent} from './component/signin/signin.component';
     DetailGroupviewComponent,
     SignupComponent,
     SigninComponent,
+    MainBannerComponent,
   ],
   imports: [
     BrowserModule,
