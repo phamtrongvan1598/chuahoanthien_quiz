@@ -41,6 +41,7 @@ export class SignupComponent implements OnInit {
         },
         error => {
           console.log('error');
+          this.router.navigate(['/api/auth/signup']);
         }
       );
   }

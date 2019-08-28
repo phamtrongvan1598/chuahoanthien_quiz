@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {NoteService} from '../../../service/note.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-detail-groupview',
@@ -7,9 +9,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DetailGroupviewComponent implements OnInit {
 
-  constructor() { }
+  constructor(private noteService: NoteService, private router: Router) {
+  }
 
   ngOnInit() {
   }
-
 }
