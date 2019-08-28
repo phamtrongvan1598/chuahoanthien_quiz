@@ -47,4 +47,12 @@ export class SigninComponent implements OnInit {
       }
     );
   }
+
+  get username() {
+    return this.signinForm.get('username');
+  }
+
+  get password() {
+    return this.signinForm.get('password');
+  }
 }

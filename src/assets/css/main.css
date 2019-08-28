@@ -1,12 +1,4 @@
-@import url(font-awesome.min.css);
-@import url("https://fonts.googleapis.com/css?family=Raleway:200,300,400,500,600");
 
-/*
-	Industrious by TEMPLATED
-	templated.co @templatedco
-	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
-*/
-/* Basic */
 body {
   -ms-overflow-style: scrollbar;
 }
@@ -95,12 +87,12 @@ mark {
   color: inherit;
 }
 
-input::-moz-focus-inner {
-  border: 0;
-  padding: 0;
-}
+/*input::-moz-focus-inner {*/
+/*  border: 0;*/
+/*  padding: 0;*/
+/*}*/
 
-input, select, textarea {
+select, textarea {
   -moz-appearance: none;
   -webkit-appearance: none;
   -ms-appearance: none;
@@ -3772,7 +3764,7 @@ body:before {
 
 #heading code {
   background: rgba(255, 255, 255, 0.075);
-  border-color: rgba(255, 255, 255, 0.25);
+  /*border-color: rgba(255, 255, 255, 0.25);*/
 }
 
 #heading hr {

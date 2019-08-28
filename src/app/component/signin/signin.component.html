@@ -17,11 +17,11 @@
         <div class="md-form">
           <input mdbInput type="text" id="materialLoginFormUserName" class="form-control" formControlName="username">
           <label for="materialLoginFormUserName">Tên đăng nhập</label>
-          <mdb-error *ngIf="signinForm.get('username').invalid &&
-           (signinForm.get('username').touched || signinForm.get('username').dirty)">
+          <mdb-error *ngIf="username.invalid &&
+           (username.touched || username.dirty)">
             * Tên đăng nhập không hợp lệ
           </mdb-error>
-          <mdb-success *ngIf="signinForm.get('username').valid && signinForm.get('username').touched">
+          <mdb-success *ngIf="username.valid">
             * Tên đăng nhập hợp lệ
           </mdb-success>
         </div>
@@ -30,11 +30,11 @@
           <input mdbInput type="password" id="materialLoginFormPassword" class="form-control"
                  formControlName="password">
           <label for="materialLoginFormPassword">Mật khẩu</label>
-          <mdb-error *ngIf="signinForm.get('password').invalid &&
-           (signinForm.get('password').touched || signinForm.get('password').dirty)">
+          <mdb-error *ngIf="password.invalid &&
+           (password.touched || password.dirty)">
             * Mật khẩu không hợp lệ
           </mdb-error>
-          <mdb-success *ngIf="signinForm.get('password').valid && signinForm.get('password').touched">
+          <mdb-success *ngIf="password.valid">
             * Mật khẩu hợp lệ
           </mdb-success>
         </div>
