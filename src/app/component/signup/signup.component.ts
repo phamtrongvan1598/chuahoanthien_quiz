@@ -10,14 +10,16 @@ import {Router} from '@angular/router';
 })
 export class SignupComponent implements OnInit {
   registerForm: FormGroup;
+  isSignedUp = false;
+  isSignUpFailed = false;
 
   constructor(private fb: FormBuilder, private userService: UserService, private router: Router) { }
 
   ngOnInit() {
     this.registerForm = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
-      username: ['', Validators.required, Validators.minLength(4)],
-      password: ['', Validators.minLength(6)],
+      username: ['', [Validators.required, Validators.minLength(4)]],
+      password: ['', [Validators.required, Validators.minLength(6)]],
       address: [''],
       dob: [''],
       phoneNumber: ['', Validators.required, Validators.pattern(/0([0-9]{9,10})/)],

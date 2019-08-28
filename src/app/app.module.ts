@@ -27,7 +27,7 @@ import {SigninComponent} from './component/signin/signin.component';
     DetailContentComponent,
     DetailGroupviewComponent,
     SignupComponent,
-    SigninComponent
+    SigninComponent,
   ],
   imports: [
     BrowserModule,
@@ -36,7 +36,7 @@ import {SigninComponent} from './component/signin/signin.component';
     ReactiveFormsModule,
     FormsModule,
     HttpClientModule,
-    MDBBootstrapModule
+    MDBBootstrapModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

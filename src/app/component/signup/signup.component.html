@@ -1,5 +1,7 @@
+<div class="row">
+  <div class="col-md-3"></div>
 <!-- Material form register -->
-<div class="card">
+<div class="card col-md m-3 p-0">
 
   <h5 class="card-header text-center py-4">
     <strong style="color: black">Đăng ký thành viên</strong>
@@ -18,6 +20,12 @@
             <input mdbInput type="text" id="materialRegisterFormFirstName" class="form-control"
                    formControlName="firstName">
             <label for="materialRegisterFormFirstName">Họ</label>
+            <mdb-error *ngIf="registerForm.get('firstName').invalid && registerForm.get('firstName').touched">
+              * Họ không hợp lệ
+            </mdb-error>
+            <mdb-success *ngIf="registerForm.get('firstName').valid">
+              * Họ hợp lệ
+            </mdb-success>
           </div>
         </div>
         <div class="col">
@@ -26,50 +34,85 @@
             <input mdbInput type="text" id="materialRegisterFormLastName" class="form-control"
                    formControlName="lastName">
             <label for="materialRegisterFormLastName">Tên</label>
+            <mdb-error *ngIf="registerForm.get('lastName').invalid && registerForm.get('lastName').touched">
+              * Tên không hợp lệ
+            </mdb-error>
+            <mdb-success *ngIf="registerForm.get('lastName').valid">
+              * Tên hợp lệ
+            </mdb-success>
           </div>
         </div>
       </div>
 
       <!-- E-mail -->
-      <div class="md-form form-group mt-0">
+      <div class="md-form mt-2">
         <input mdbInput type="email" id="materialRegisterFormEmail" class="form-control" formControlName="email">
         <label for="materialRegisterFormEmail">E-mail</label>
+        <mdb-error *ngIf="registerForm.get('email').invalid && registerForm.get('email').touched">
+          * E-mail không hợp lệ
+        </mdb-error>
+        <mdb-success *ngIf="registerForm.get('email').valid">
+          * E-mail hợp lệ
+        </mdb-success>
       </div>
 
+
       <!-- username -->
-      <div class="md-form form-group mt-0">
+      <div class="md-form" style="margin-top: 30px">
         <input mdbInput type="text" id="materialRegisterFormUserName" class="form-control"
                aria-describedby="materialRegisterFormUserNameHelpInline" formControlName="username">
         <label for="materialRegisterFormUserName">Tên người dùng</label>
+        <mdb-error *ngIf="registerForm.get('username').invalid && registerForm.get('username').touched">
+          * Tên đăng nhập không hợp lệ
+        </mdb-error>
+        <mdb-success *ngIf="registerForm.get('username').valid">
+          * Tên đăng nhập hợp lệ
+        </mdb-success>
       </div>
 
       <!-- Password -->
-      <div class="md-form form-group">
+      <div class="md-form" style="margin-top: 30px">
         <input mdbInput type="password" id="materialRegisterFormPassword" class="form-control"
                aria-describedby="materialRegisterFormPasswordHelpInline" formControlName="password">
         <label for="materialRegisterFormPassword">Mật khẩu</label>
+        <mdb-error *ngIf="registerForm.get('password').invalid && registerForm.get('password').touched">
+          * Mật khẩu không hợp lệ
+        </mdb-error>
+        <mdb-success *ngIf="registerForm.get('password').valid">
+          * Mật khẩu hợp lệ
+        </mdb-success>
       </div>
 
       <!-- Password-confirmation -->
-      <div class="md-form">
+      <div class="md-form" style="margin-top: 30px">
         <input mdbInput type="password" id="materialRegisterFormPassword1" class="form-control"
                aria-describedby="materialRegisterFormPasswordHelpInline" formControlName="password">
         <label for="materialRegisterFormPassword1">Nhập lại mật khẩu</label>
+        <mdb-success *ngIf="registerForm.get('password').valid">
+          * Mật khẩu khớp
+        </mdb-success>
       </div>
 
       <!-- Phone number -->
-      <div class="md-form">
+      <div class="md-form" style="margin-top: 30px">
         <input mdbInput type="tel" id="materialRegisterFormPhone" class="form-control"
                aria-describedby="materialRegisterFormPhoneHelpInline" formControlName="phoneNumber">
         <label for="materialRegisterFormPhone">Số điện thoại</label>
+        <mdb-error *ngIf="registerForm.get('phoneNumber').invalid && registerForm.get('phoneNumber').touched">
+          * Số điện thoại không hợp lệ
+        </mdb-error>
+        <mdb-success *ngIf="registerForm.get('phoneNumber').valid">
+          * Số điện thoại hợp lệ
+        </mdb-success>
       </div>
 
       <!-- Address -->
-      <div class="md-form">
+      <div class="md-form" style="margin-top: 30px">
         <input mdbInput type="text" id="materialRegisterFormAddress" class="form-control"
                aria-describedby="materialRegisterFormAddressHelpInline" formControlName="address">
         <label for="materialRegisterFormAddress">Địa chỉ</label>
       </div>
+
 
       <!-- DoB -->
       <div class="md-form mt-5">
@@ -79,7 +122,7 @@
       </div>
 
       <!-- Newsletter -->
-      <div class="form-check">
+      <div class="form-check" style="margin-top: 30px">
         <input mdbInput type="checkbox" class="form-check-input" id="materialRegisterFormNewsletter">
         <label class="form-check-label" for="materialRegisterFormNewsletter">
           Tôi đồng ý với các điều khoản của nhà cung cấp dịch vụ</label>
@@ -127,3 +170,5 @@
 
 </div>
 <!-- Material form register -->
+  <div class="col-md-3"></div>
+</div>

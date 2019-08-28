@@ -1,71 +1,92 @@
 <!-- Material form login -->
-<div class="card">
+<div class="row p-0">
+  <div class="col-md-4 p-0"></div>
+  <div class="card col-md m-3 p-0">
 
-  <h5 class="card-header text-center py-4">
-    <strong style="color: black">Đăng nhập</strong>
-  </h5>
+    <h5 class="card-header text-center">
+      <strong style="color: black">Đăng nhập</strong>
+    </h5>
 
-  <!--Card content-->
-  <div class="card-body px-lg-5 pt-0">
+    <!--Card content-->
+    <div class="card-body px-lg-5 pt-0">
 
-    <!-- Form -->
-    <form class="text-center" style="color: #757575;" [formGroup]="signinForm" (ngSubmit)="login()" novalidate>
+      <!-- Form -->
+      <form class="text-center" style="color: #757575;" [formGroup]="signinForm" (ngSubmit)="login()" novalidate>
 
-      <!-- Email -->
-      <div class="md-form">
-        <input mdbInput type="text" id="materialLoginFormUserName" class="form-control" formControlName="username">
-        <label for="materialLoginFormUserName">Tên đăng nhập</label>
-      </div>
+        <!-- Username -->
+        <div class="md-form">
+          <input mdbInput type="text" id="materialLoginFormUserName" class="form-control" formControlName="username">
+          <label for="materialLoginFormUserName">Tên đăng nhập</label>
+          <mdb-error *ngIf="signinForm.get('username').invalid &&
+           (signinForm.get('username').touched || signinForm.get('username').dirty)">
+            * Tên đăng nhập không hợp lệ
+          </mdb-error>
+          <mdb-success *ngIf="signinForm.get('username').valid && signinForm.get('username').touched">
+            * Tên đăng nhập hợp lệ
+          </mdb-success>
+        </div>
+        <br>
+        <!-- Password -->
+        <div class="md-form">
+          <input mdbInput type="password" id="materialLoginFormPassword" class="form-control"
+                 formControlName="password">
+          <label for="materialLoginFormPassword">Mật khẩu</label>
+          <mdb-error *ngIf="signinForm.get('password').invalid &&
+           (signinForm.get('password').touched || signinForm.get('password').dirty)">
+            * Mật khẩu không hợp lệ
+          </mdb-error>
+          <mdb-success *ngIf="signinForm.get('password').valid && signinForm.get('password').touched">
+            * Mật khẩu hợp lệ
+          </mdb-success>
+        </div>
 
-      <!-- Password -->
-      <div class="md-form">
-        <input mdbInput type="password" id="materialLoginFormPassword" class="form-control" formControlName="password">
-        <label for="materialLoginFormPassword">Mật khẩu</label>
-      </div>
+        <br>
 
-      <div class="d-flex justify-content-around">
-        <div>
-          <!-- Remember me -->
-          <div class="form-check">
-            <input mdbInput type="checkbox" class="form-check-input" id="materialLoginFormRemember">
-            <label class="form-check-label" for="materialLoginFormRemember">Ghi nhớ</label>
+        <div class="d-flex justify-content-around">
+          <div>
+            <!-- Remember me -->
+            <div class="form-check">
+              <input mdbInput type="checkbox" class="form-check-input" id="materialLoginFormRemember">
+              <label class="form-check-label" for="materialLoginFormRemember">Ghi nhớ</label>
+            </div>
+          </div>
+          <div>
+            <!-- Forgot password -->
+            <a href="">Quên mật khẩu?</a>
           </div>
         </div>
-        <div>
-          <!-- Forgot password -->
-          <a href="">Quên mật khẩu?</a>
-        </div>
-      </div>
 
-      <!-- Sign in button -->
-      <br>
-      <button class="btn btn-outline-success" type="submit" style="width: 350px">Đăng nhập</button>
+        <!-- Sign in button -->
+        <br>
+        <button class="btn btn-outline-success" type="submit" style="width: 350px">Đăng nhập</button>
 
-      <!-- Register -->
-      <br><br>
-      <p>Chưa phải là thành viên?<br>
-        <a routerLink='/api/auth/signup'>Đăng ký ngay</a>
-      </p>
+        <!-- Register -->
+        <br><br>
+        <p>Chưa phải là thành viên?<br>
+          <a routerLink='/api/auth/signup'>Đăng ký ngay</a>
+        </p>
 
-      <!-- Social login -->
-      <p>Hoặc đăng nhập với: </p>
-      <a type="button" class="btn-floating btn-fb btn-lg">
-        <i class="fab fa-facebook-f"></i>
-      </a>
-      <a type="button" class="btn-floating btn-tw btn-lg">
-        <i class="fab fa-twitter"></i>
-      </a>
-      <a type="button" class="btn-floating btn-li btn-lg">
-        <i class="fab fa-linkedin-in"></i>
-      </a>
-      <a type="button" class="btn-floating btn-git btn-lg">
-        <i class="fab fa-github"></i>
-      </a>
+        <!-- Social login -->
+        <p>Hoặc đăng nhập với: </p>
+        <a type="button" class="btn-floating btn-fb btn-lg">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <a type="button" class="btn-floating btn-tw btn-lg">
+          <i class="fab fa-twitter"></i>
+        </a>
+        <a type="button" class="btn-floating btn-li btn-lg">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+        <a type="button" class="btn-floating btn-git btn-lg">
+          <i class="fab fa-github"></i>
+        </a>
 
-    </form>
-    <!-- Form -->
+      </form>
+      <!-- Form -->
+
+    </div>
 
   </div>
-
+  <!-- Material form login -->
+  <div class="col-md-4 p-0"></div>
 </div>
-<!-- Material form login -->
