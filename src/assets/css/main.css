@@ -451,10 +451,6 @@ form {
   margin: 0 0 2rem 0;
 }
 
-input[type="text"],
-input[type="password"],
-input[type="email"],
-input[type="tel"],
 input[type="search"],
 input[type="url"],
 select,
@@ -474,10 +470,6 @@ textarea {
   width: 100%;
 }
 
-input[type="text"]:invalid,
-input[type="password"]:invalid,
-input[type="email"]:invalid,
-input[type="tel"]:invalid,
 input[type="search"]:invalid,
 input[type="url"]:invalid,
 select:invalid,
@@ -492,10 +484,6 @@ label {
   margin: 0 0 1rem 0;
 }
 
-input[type="text"],
-input[type="password"],
-input[type="email"],
-input[type="tel"],
 input[type="search"],
 input[type="url"] {
   height: 3.25rem;
@@ -558,33 +546,6 @@ input[type="radio"] + label:before {
   text-transform: none !important;
 }
 
-input[type="checkbox"] + label:before,
-input[type="radio"] + label:before {
-  border-radius: 4px;
-  border: solid 1px;
-  content: '';
-  display: inline-block;
-  height: 1.95rem;
-  left: 0;
-  position: absolute;
-  text-align: center;
-  top: -0.1625rem;
-  width: 1.95rem;
-}
-
-input[type="checkbox"]:checked + label:before,
-input[type="radio"]:checked + label:before {
-  content: '\f00c';
-}
-
-input[type="checkbox"] + label:before {
-  border-radius: 4px;
-}
-
-input[type="radio"] + label:before {
-  border-radius: 100%;
-}
-
 ::-webkit-input-placeholder {
   opacity: 1.0;
 }
@@ -605,10 +566,6 @@ label {
   color: #555555;
 }
 
-input[type="text"],
-input[type="password"],
-input[type="email"],
-input[type="tel"],
 input[type="search"],
 input[type="url"],
 select,
@@ -617,10 +574,6 @@ textarea {
   border-color: rgba(0, 0, 0, 0.25);
 }
 
-input[type="text"]:focus,
-input[type="password"]:focus,
-input[type="email"]:focus,
-input[type="tel"]:focus,
 input[type="search"]:focus,
 input[type="url"]:focus,
 select:focus,
@@ -2979,24 +2932,6 @@ ul.icons li .icon:before {
   color: #ffffff;
 }
 
-#banner input[type="text"],
-#banner input[type="password"],
-#banner input[type="email"],
-#banner input[type="tel"],
-#banner input[type="search"],
-#banner input[type="url"],
-#banner select,
-#banner textarea {
-  background-color: rgba(255, 255, 255, 0.075);
-  border-color: rgba(255, 255, 255, 0.25);
-}
-
-#banner input[type="text"]:focus,
-#banner input[type="password"]:focus,
-#banner input[type="email"]:focus,
-#banner input[type="tel"]:focus,
-#banner input[type="search"]:focus,
-#banner input[type="url"]:focus,
 #banner select:focus,
 #banner textarea:focus {
   border-color: #ce1b28;
@@ -3309,10 +3244,6 @@ body.is-preload #banner:before {
   color: #ffffff;
 }
 
-#cta input[type="text"],
-#cta input[type="password"],
-#cta input[type="email"],
-#cta input[type="tel"],
 #cta input[type="search"],
 #cta input[type="url"],
 #cta select,
@@ -3321,10 +3252,6 @@ body.is-preload #banner:before {
   border-color: rgba(255, 255, 255, 0.25);
 }
 
-#cta input[type="text"]:focus,
-#cta input[type="password"]:focus,
-#cta input[type="email"]:focus,
-#cta input[type="tel"]:focus,
 #cta input[type="search"]:focus,
 #cta input[type="url"]:focus,
 #cta select:focus,
@@ -3499,10 +3426,6 @@ body.is-preload #banner:before {
   color: #ffffff;
 }
 
-#footer input[type="text"],
-#footer input[type="password"],
-#footer input[type="email"],
-#footer input[type="tel"],
 #footer input[type="search"],
 #footer input[type="url"],
 #footer select,
@@ -3511,10 +3434,6 @@ body.is-preload #banner:before {
   border-color: rgba(255, 255, 255, 0.25);
 }
 
-#footer input[type="text"]:focus,
-#footer input[type="password"]:focus,
-#footer input[type="email"]:focus,
-#footer input[type="tel"]:focus,
 #footer input[type="search"]:focus,
 #footer input[type="url"]:focus,
 #footer select:focus,
@@ -3912,10 +3831,6 @@ body:before {
   color: #ffffff;
 }
 
-#heading input[type="text"],
-#heading input[type="password"],
-#heading input[type="email"],
-#heading input[type="tel"],
 #heading input[type="search"],
 #heading input[type="url"],
 #heading select,
@@ -3924,10 +3839,6 @@ body:before {
   border-color: rgba(255, 255, 255, 0.25);
 }
 
-#heading input[type="text"]:focus,
-#heading input[type="password"]:focus,
-#heading input[type="email"]:focus,
-#heading input[type="tel"]:focus,
 #heading input[type="search"]:focus,
 #heading input[type="url"]:focus,
 #heading select:focus,
