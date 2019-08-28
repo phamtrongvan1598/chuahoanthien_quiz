@@ -6,5 +6,9 @@
     hoặc
     <button class="btn btn-outline-primary" routerLink='/api/auth/signup'>Đăng ký</button>
   </nav>
-  <nav *ngIf=""></nav>
+  <nav *ngIf="this.authService.token">
+    <a>
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRinpolF9EbTbZzc4nsBZGghiuT4DFe1kEEFAnXg-Y67oo7n6HN">
+    </a>
+  </nav>
 </header>

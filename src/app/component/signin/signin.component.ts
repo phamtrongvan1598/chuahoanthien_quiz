@@ -27,7 +27,7 @@ export class SigninComponent implements OnInit {
     console.log(JSON.stringify(this.signinForm.value));
     this.authService.login(this.signinForm.value).subscribe(
       next => {
-        localStorage.setItem('token', next.token);
+        localStorage.setItem('token', next.accessToken);
         this.authService.token = next.token;
         this.authService.header = new HttpHeaders(
           {
@@ -38,7 +38,7 @@ export class SigninComponent implements OnInit {
         if (next.token) {
           this.router.navigateByUrl('/');
         }
-        console.log(next.token);
+        console.log(next.accessToken);
       }
     );
   }

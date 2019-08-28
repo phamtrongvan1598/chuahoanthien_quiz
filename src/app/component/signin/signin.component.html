@@ -11,17 +11,17 @@
       <div class="col-md-3"></div>
       <div class="col-md-6">
         <!-- Form -->
-        <form class="text-center" style="color: #757575;">
+        <form class="text-center" style="color: #757575;" [formGroup]="signinForm"(ngSubmit)="login()">
 
           <!-- Email -->
           <div class="md-form">
-            <input mdbInput type="text" id="materialLoginFormUserName" class="form-control">
+            <input mdbInput type="text" id="materialLoginFormUserName" class="form-control" formControlName="username">
             <label for="materialLoginFormUserName">Tên đăng nhập</label>
           </div>
 
           <!-- Password -->
           <div class="md-form">
-            <input mdbInput type="password" id="materialLoginFormPassword" class="form-control">
+            <input mdbInput type="password" id="materialLoginFormPassword" class="form-control" formControlName="password">
             <label for="materialLoginFormPassword">Mật khẩu</label>
           </div>
 
