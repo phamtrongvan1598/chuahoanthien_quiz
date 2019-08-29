@@ -3,23 +3,20 @@
                (closed)="events.push('close!')">
     <div>
       <a href=""><img src="../../../../assets/images/pic03.jpg" alt="" style="max-width: 12%; border-radius: 100%"></a>
-      <mat-form-field class="ml-3">
-        <mat-label>User</mat-label>
-        <mat-select>
-          <mat-option>Settings</mat-option>
-          <mat-option>Help</mat-option>
-          <mat-option>Sign-out</mat-option>
-        </mat-select>
-      </mat-form-field>
+      <a href="" class="ml-2" style="text-decoration: none">User <i class="fa fa-angle-down" style="font-size: smaller"></i></a>
     </div>
+
     <div>
       <mat-form-field>
-        <input placeholder="Search" id="search" type="text" matInput>
+        <input placeholder="Search all notes" id="search" type="text" matInput>
         <label for="search"></label>
       </mat-form-field>
     </div>
     <div>
-      <button></button>
+      <button style="border-radius: 40px; width: 200px;" class="btn btn-outline-success"><i class="fa fa-plus"></i> New note</button>
+    </div>
+    <div class="mt-5">
+
     </div>
   </mat-sidenav>
 
