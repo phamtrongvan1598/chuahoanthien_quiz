@@ -15,6 +15,11 @@ import {HttpClientModule} from '@angular/common/http';
 import { MainBodyHeaderComponent } from './component/main-body/main-body-header/main-body-header.component';
 import {SigninComponent} from './component/signin/signin.component';
 import { MainBannerComponent } from './component/main-banner/main-banner.component';
+import {MatButtonModule, MatCheckboxModule, MatFormFieldModule, MatInputModule, MatSelectModule, MatSidenavModule} from '@angular/material';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { DetailSidenavComponent } from './component/detail/detail-sidenav/detail-sidenav.component';
+import { DetailListComponent } from './component/detail/detail-list/detail-list.component';
+import { DetailMainBodyComponent } from './component/detail/detail-main-body/detail-main-body.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +37,9 @@ import { MainBannerComponent } from './component/main-banner/main-banner.compone
     SigninComponent,
     MainBodyHeaderComponent,
     MainBannerComponent,
+    DetailSidenavComponent,
+    DetailListComponent,
+    DetailMainBodyComponent,
   ],
   imports: [
     BrowserModule,
@@ -41,6 +49,13 @@ import { MainBannerComponent } from './component/main-banner/main-banner.compone
     FormsModule,
     HttpClientModule,
     MDBBootstrapModule,
+    MatSidenavModule,
+    MatButtonModule,
+    BrowserAnimationsModule,
+    MatCheckboxModule,
+    MatFormFieldModule,
+    MatSelectModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]
