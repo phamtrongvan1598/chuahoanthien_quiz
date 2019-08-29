@@ -15,7 +15,12 @@ export class DetailListComponent implements OnInit {
   }
 
   listAllNotes() {
-    return this.noteService.getAllNotes();
+    return this.noteService.getAllNotes().subscribe(data => {
+        console.log('succsess');
+      },
+      error => {
+        console.log('error');
+      });
   }
 
 }
