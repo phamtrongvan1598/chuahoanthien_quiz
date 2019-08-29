@@ -1,5 +1,6 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 import {MatSidenav} from '@angular/material';
+import {UserService} from '../../../service/user.service';
 
 @Component({
   selector: 'app-detail-sidenav',
@@ -12,10 +13,14 @@ export class DetailSidenavComponent implements OnInit {
   opened: boolean;
   reason = '';
 
-  constructor() {
+  constructor(private userService: UserService) {
   }
 
   ngOnInit() {
+  }
+
+  signout() {
+    return this.userService.signout();
   }
 
   close(reason: string) {

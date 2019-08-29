@@ -25,10 +25,10 @@ export class SigninComponent implements OnInit {
     });
   }
 
-  login() {
+  signin() {
     console.log('Log in');
     console.log(JSON.stringify(this.signinForm.value));
-    this.authService.login(this.signinForm.value).subscribe(
+    this.authService.signin(this.signinForm.value).subscribe(
       next => {
         localStorage.setItem('token', next.accessToken);
         localStorage.setItem('username', next.username);

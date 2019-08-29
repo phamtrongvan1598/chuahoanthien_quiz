@@ -12,12 +12,11 @@ const httpOptions = {
 })
 export class AuthService {
   private readonly API_URL = 'http://localhost:8080/api/auth/signin';
-  // private loginUrl = '/api/auth/signin';
   token: string;
   username: string;
   header: HttpHeaders;
 
-  login(signinForm: FormGroup): Observable<any> {
+  signin(signinForm: FormGroup): Observable<any> {
     return this.httpClient.post(this.API_URL, JSON.stringify(signinForm), httpOptions);
   }
 
@@ -31,8 +30,4 @@ export class AuthService {
     })
     ;
   }
-
-  // attemptAuth(credentials: SigninInfoService): Observable<JwtResponse> {
-  //   return this.httpClient.post<JwtResponse>(this.loginUrl, credentials, httpOptions);
-  // }
 }

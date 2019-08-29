@@ -16,4 +16,8 @@ export class UserService {
   register(user: User): Observable<User> {
     return this.http.post<User>(this.API_URL, user);
   }
+
+  signout() {
+    window.localStorage.clear();
+  }
 }

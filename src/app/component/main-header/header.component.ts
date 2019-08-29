@@ -1,5 +1,4 @@
 import {Component, OnInit} from '@angular/core';
-import {SigninComponent} from '../signin/signin.component';
 
 @Component({
   selector: 'app-header',
@@ -7,14 +6,11 @@ import {SigninComponent} from '../signin/signin.component';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-  // isSignedIn: boolean;
-
 
   constructor() {
   }
 
   ngOnInit() {
-    // this.isSignedIn = this.signin.isSignedIn;
   }
 }
 
