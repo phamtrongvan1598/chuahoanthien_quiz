@@ -4,6 +4,7 @@ import {AuthService} from '../../auth/auth.service';
 import {Router} from '@angular/router';
 import {HttpHeaders} from '@angular/common/http';
 
+
 @Component({
   selector: 'app-signin',
   templateUrl: './signin.component.html',
@@ -11,14 +12,16 @@ import {HttpHeaders} from '@angular/common/http';
 })
 export class SigninComponent implements OnInit {
   signinForm: FormGroup;
+  isSignedIn = false;
 
-  constructor(private fb: FormBuilder, private authService: AuthService, private router: Router) {
+  constructor(private fb: FormBuilder, private authService: AuthService,
+              private router: Router) {
   }
 
   ngOnInit() {
     this.signinForm = this.fb.group({
-      username: ['', Validators.required],
-      password: ['', Validators.required]
+      username: ['', [Validators.required, Validators.minLength(4)]],
+      password: ['', [Validators.required, Validators.minLength(4)]]
     });
   }
 
@@ -36,12 +39,20 @@ export class SigninComponent implements OnInit {
             'Content-Type': 'application/json'
           }
         );
-        if (next.token) {
-          this.router.navigateByUrl('/');
+        if (next.accessToken) {
+          this.isSignedIn = true;
+          this.router.navigateByUrl('/api/owner/notes');
         }
         console.log(next.accessToken);
       }
     );
   }
 
+  get username() {
+    return this.signinForm.get('username');
+  }
+
+  get password() {
+    return this.signinForm.get('password');
+  }
 }

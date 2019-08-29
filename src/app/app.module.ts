@@ -10,10 +10,11 @@ import { DetailItemComponent } from './component/detail/detail-item/detail-item.
 import {MDBBootstrapModule} from 'angular-bootstrap-md';
 import {DetailGroupviewComponent} from './component/detail/detail-groupview/detail-groupview.component';
 import { SignupComponent } from './component/signup/signup.component';
-import { SigninComponent } from './component/signin/signin.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import { MainBodyHeaderComponent } from './component/main-body/main-body-header/main-body-header.component';
+import {SigninComponent} from './component/signin/signin.component';
+import { MainBannerComponent } from './component/main-banner/main-banner.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { MainBodyHeaderComponent } from './component/main-body/main-body-header/
     SignupComponent,
     SigninComponent,
     MainBodyHeaderComponent,
+    MainBannerComponent,
   ],
   imports: [
     BrowserModule,
@@ -38,7 +40,7 @@ import { MainBodyHeaderComponent } from './component/main-body/main-body-header/
     ReactiveFormsModule,
     FormsModule,
     HttpClientModule,
-    MDBBootstrapModule
+    MDBBootstrapModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

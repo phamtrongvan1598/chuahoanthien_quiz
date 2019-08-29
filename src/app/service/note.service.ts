@@ -24,7 +24,7 @@ export class NoteService {
   }
 
   getNoteInfoById(id: number): Observable<any> {
-    return this.http.get(this.ownerResource + '/notes' + '/' + id);
+    return this.http.get(this.ownerResource + '/note' + '/' + id);
   }
   deleteNote(id: number): Observable<any> {
     return this.http.delete(this.ownerResource + '/' + id);

@@ -18,7 +18,7 @@ export class TokenStorageService {
     window.localStorage.clear();
   }
 
-  public savetoken(token: string) {
+  public saveToken(token: string) {
     window.localStorage.removeItem(TOKEN_KEY);
     window.localStorage.setItem(TOKEN_KEY, token);
   }
