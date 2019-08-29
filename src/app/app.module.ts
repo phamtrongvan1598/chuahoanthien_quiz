@@ -6,7 +6,6 @@ import { HeaderComponent } from './component/main-header/header.component';
 import { FooterComponent } from './component/main-footer/footer.component';
 import { MainBodyComponent } from './component/main-body/main-body.component';
 import {MDBBootstrapModule} from 'angular-bootstrap-md';
-import {DetailGroupviewComponent} from './component/detail/detail-groupview/detail-groupview.component';
 import { SignupComponent } from './component/signup/signup.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
@@ -25,8 +24,6 @@ import { DetailMainBodyComponent } from './component/detail/detail-main-body/det
     FooterComponent,
     MainBodyComponent,
     DetailSidenavComponent,
-    DetailGroupviewComponent,
-    DetailGroupviewComponent,
     SignupComponent,
     SigninComponent,
     MainBannerComponent,
