@@ -1,177 +1,119 @@
 <mat-sidenav-container class="example-container">
-  <!--  <mat-sidenav #sidenav (keydown.escape)="close('escape')" disableClose>-->
-  <!--    <div class="pl-5">-->
-  <!--      <img src="../../../../assets/images/pic03.jpg" alt="" style="max-width: 12%; border-radius: 100%">-->
-  <!--      <a href="" class="ml-2 dropdown-toggle" style="text-decoration: none;color: rgba(255, 255, 255, 0.8)"-->
-  <!--         data-toggle="dropdown">-->
-  <!--        User</a>-->
-  <!--      <div class="dropdown-menu dropdown-primary" style="width: 200px">-->
-  <!--        <h5 style="color: rgba(2,12,36,0.63); text-align: center"> Account</h5>-->
-  <!--        <hr>-->
-  <!--        <a class="dropdown-item" href="#">Settings</a>-->
-  <!--        <a class="dropdown-item" href="#">Help</a>-->
-  <!--        <a class="dropdown-item" href="#">What's new</a>-->
-  <!--        <hr>-->
-  <!--        <a class="dropdown-item" href="#" [ngModel]="signout()">Sign out</a>-->
-  <!--      </div>-->
-  <!--    </div>-->
-  <!--    <hr>-->
-  <!--    <div class="pl-5">-->
-  <!--      <mat-form-field style="width: 80%">-->
-  <!--        <input placeholder="Search all notes" id="search" type="text" matInput>-->
-  <!--        <label for="search"></label>-->
-  <!--      </mat-form-field>-->
-  <!--    </div>-->
-  <!--    <hr>-->
-  <!--    <div class="btn-group ml-5" role="group" aria-label="Basic example">-->
-  <!--      <button style="width: 150px; border-top-left-radius: 50px; border-bottom-left-radius: 50px"-->
-  <!--              type="button" class="btn btn-success"><i class="fa fa-plus"></i> New Note-->
-  <!--      </button>-->
-  <!--      <button style="border-top-right-radius: 50px; border-bottom-right-radius: 50px"-->
-  <!--              type="button" class="btn btn-success dropdown-toggle"-->
-  <!--              data-toggle="dropdown"></button>-->
-  <!--      <div class="dropdown-menu dropdown-primary" style="width: 200px">-->
-  <!--        <a class="dropdown-item" href="#"><i class="fa fa-sticky-note"></i> Blank Note</a>-->
-  <!--        <hr>-->
-  <!--        <a class="dropdown-item" href="#"><i class="fa fa-sticky-note"></i> Meeting Note</a>-->
-  <!--        <a class="dropdown-item" href="#"><i class="fa fa-sticky-note"></i> To-Do</a>-->
-  <!--        <a class="dropdown-item" href="#"><i class="fa fa-sticky-note"></i> Weekly Planner</a>-->
-  <!--        <a class="dropdown-item" href="#"><i class="fa fa-sticky-note"></i> Project Plan</a>-->
-  <!--        <hr>-->
-  <!--        <a class="dropdown-item" href="#"><i class="fa fa-sticky-note"></i> Lecture Notes</a>-->
-  <!--        <a class="dropdown-item" href="#"><i class="fa fa-sticky-note"></i> Essay Outline</a>-->
-  <!--        <hr>-->
-  <!--        <a class="dropdown-item" href="#"><i class="fa fa-sticky-note"></i> Meal Planner</a>-->
-  <!--        <a class="dropdown-item" href="#"><i class="fa fa-sticky-note"></i> Daily Reflection</a>-->
-  <!--      </div>-->
-  <!--    </div>-->
-
-  <!--    <div class="container mt-5">-->
-  <!--      <div class="p-2"><a href=""><i class="fa fa-star"></i> Shortcuts</a></div>-->
-  <!--      <div class="p-2"><a href=""><i class="fa fa-list"></i> All Notes</a></div>-->
-  <!--      <div class="p-2"><a href=""><i class="fa fa-book"></i> Notebook</a></div>-->
-  <!--      <div class="p-2"><a href=""><i class="fa fa-users"></i> Share with Me</a></div>-->
-  <!--      <div class="p-2"><a href=""><i class="fa fa-tags"></i> Tags</a></div>-->
-  <!--      <div class="p-2"><a href=""><i class="fa fa-trash"></i> Trash</a></div>-->
-  <!--      <div class="p-2"><a href=""><i class="fa fa-money-bill-wave"></i> Upgrade</a></div>-->
-  <!--    </div>-->
-  <!--  </mat-sidenav>-->
-
-  <mat-sidenav-content id="sidenav" style=" width: 60px; background-color: #1C1C1C;">
-    <div class="ml-2 mb-3 mt-2">
-      <img src="../../../../assets/images/pic03.jpg" alt=""
-           style="max-width: 40px; border-radius: 100%; margin-left: 3px">
-    </div>
-    <hr>
-    <div class="pt-2 pb-2" id="search">
-      <button mat-button matTooltip="Search"
-              matTooltipPosition="right"><i class="fa fa-search"></i></button>
-    </div>
-    <mat-form-field class="pb-2 ml-2" id="searchE">
-      <input type="text" matInput id="s" placeholder="Search all Notes">
-      <label for="s"></label>
-    </mat-form-field>
-    <hr>
-    <div id="newNote">
-      <button class="btn btn-success mt-3" style="border-radius: 100%; margin-left: 13px"
-              matTooltip="New Note"
-              matTooltipPosition="right"><i class="fa fa-plus"></i>
-      </button>
-    </div>
-    <div class="btn-group ml-3" role="group" aria-label="Basic example" id="newNoteE">
-      <button style="width: 150px; border-top-left-radius: 50px; border-bottom-left-radius: 50px"
-              type="button" class="btn btn-success"><i class="fa fa-plus"></i> New Note
-      </button>
-      <button style="border-top-right-radius: 50px; border-bottom-right-radius: 50px"
-              type="button" class="btn btn-success dropdown-toggle"
-              data-toggle="dropdown"></button>
-      <div class="dropdown-menu dropdown-primary" style="width: 200px">
-        <a class="dropdown-item" href="#"><i class="fa fa-sticky-note"></i> Blank Note</a>
-        <hr>
-        <a class="dropdown-item" href="#"><i class="fa fa-sticky-note"></i> Meeting Note</a>
-        <a class="dropdown-item" href="#"><i class="fa fa-sticky-note"></i> To-Do</a>
-        <a class="dropdown-item" href="#"><i class="fa fa-sticky-note"></i> Weekly Planner</a>
-        <a class="dropdown-item" href="#"><i class="fa fa-sticky-note"></i> Project Plan</a>
-        <hr>
-        <a class="dropdown-item" href="#"><i class="fa fa-sticky-note"></i> Lecture Notes</a>
-        <a class="dropdown-item" href="#"><i class="fa fa-sticky-note"></i> Essay Outline</a>
-        <hr>
-        <a class="dropdown-item" href="#"><i class="fa fa-sticky-note"></i> Meal Planner</a>
-        <a class="dropdown-item" href="#"><i class="fa fa-sticky-note"></i> Daily Reflection</a>
+    <mat-sidenav-content id="sidenav" style=" width: 60px; background-color: #1C1C1C;">
+      <div class="ml-2 mb-3 mt-2">
+        <img src="../../../../assets/images/pic03.jpg" alt=""
+             style="max-width: 40px; border-radius: 100%; margin-left: 3px">
       </div>
-    </div>
-    <div class="mt-3 pt-2" id="shortcut">
-      <button mat-button matTooltip="Shortcuts"
-              matTooltipPosition="right"><i class="fa fa-star"></i>
-      </button>
-    </div>
-    <div class="mt-3 pt-2" id="shortcutE">
-      <button mat-button><i class="fa fa-star"> Shortcuts</i>
-      </button>
-    </div>
-    <div class="pt-2" id="allNotes">
-      <button mat-button matTooltip="All Notes"
-              matTooltipPosition="right"><i class="fa fa-list"></i>
-      </button>
-    </div>
-    <div class="pt-2" id="allNotesE">
-      <button mat-button><i class="fa fa-list"> All Notes</i>
-      </button>
-    </div>
-    <div class="pt-2" id="notebook">
-      <button mat-button matTooltip="Notebook"
-              matTooltipPosition="right"><i class="fa fa-book"></i>
-      </button>
-    </div>
-    <div class="pt-2" id="notebookE">
-      <button mat-button><i class="fa fa-book"> Notebook</i>
-      </button>
-    </div>
-    <div class="pt-2" id="share">
-      <button mat-button matTooltip="Share with Me"
-              matTooltipPosition="right"><i class="fa fa-users"></i>
-      </button>
-    </div>
-    <div class="pt-2" id="shareE">
-      <button mat-button><i class="fa fa-users"> Share with Me</i>
-      </button>
-    </div>
-    <div class="pt-2" id="tag">
-      <button mat-button matTooltip="Tags"
-              matTooltipPosition="right"><i class="fa fa-tags"></i>
-      </button>
-    </div>
-    <div class="pt-2" id="tagE">
-      <button mat-button><i class="fa fa-tags"> Tags</i>
-      </button>
-    </div>
-    <div class="pt-2" id="trash">
-      <button mat-button matTooltip="Trash"
-              matTooltipPosition="right"><i class="fa fa-trash"></i>
-      </button>
-    </div>
-    <div class="pt-2" id="trashE">
-      <button mat-button><i class="fa fa-trash"> Trash</i>
-      </button>
-    </div>
-    <div class="pt-2" id="upgrade">
-      <button mat-button matTooltip="Upgrade"
-              matTooltipPosition="right"><i class="fa fa-money-bill-wave"></i>
-      </button>
-    </div>
-    <div class="pt-2" id="upgradeE">
-      <button mat-button><i class="fa fa-money-bill-wave"> Upgrade</i>
-      </button>
-    </div>
-    <div class="pt-2">
-      <button mat-button matTooltip="Dispand side bar"
-              matTooltipPosition="right" id="dispand"><i class="fa fa-angle-double-left"></i></button>
-    </div>
-    <div class="pt-2">
-      <button mat-button matTooltip="Expand side bar"
-              matTooltipPosition="right" id="expand"><i class="fa fa-angle-double-right"></i></button>
-    </div>
-  </mat-sidenav-content>
+      <hr>
+      <div class="pt-2 pb-2" id="search">
+        <button mat-button matTooltip="Search"
+                matTooltipPosition="right"><i class="fa fa-search"></i></button>
+      </div>
+      <mat-form-field class="pb-2 ml-2 pt-2" id="searchE">
+        <input type="text" matInput id="s" placeholder="Search all Notes">
+        <label for="s"></label>
+      </mat-form-field>
+      <hr>
+      <div id="newNote">
+        <button class="btn btn-success mt-4" style="border-radius: 100%; margin-left: 13px"
+                matTooltip="New Note"
+                matTooltipPosition="right"><i class="fa fa-plus"></i>
+        </button>
+      </div>
+      <div class="btn-group ml-3" role="group" aria-label="Basic example" id="newNoteE">
+        <button style="width: 150px; border-top-left-radius: 50px; border-bottom-left-radius: 50px"
+                type="button" class="btn btn-success"><i class="fa fa-plus"></i> New Note
+        </button>
+        <button style="border-top-right-radius: 50px; border-bottom-right-radius: 50px"
+                type="button" class="btn btn-success dropdown-toggle"
+                data-toggle="dropdown"></button>
+        <div class="dropdown-menu dropdown-primary" style="width: 200px">
+          <a class="dropdown-item" href="#"><i class="fa fa-sticky-note"></i> Blank Note</a>
+          <hr>
+          <a class="dropdown-item" href="#"><i class="fa fa-sticky-note"></i> Meeting Note</a>
+          <a class="dropdown-item" href="#"><i class="fa fa-sticky-note"></i> To-Do</a>
+          <a class="dropdown-item" href="#"><i class="fa fa-sticky-note"></i> Weekly Planner</a>
+          <a class="dropdown-item" href="#"><i class="fa fa-sticky-note"></i> Project Plan</a>
+          <hr>
+          <a class="dropdown-item" href="#"><i class="fa fa-sticky-note"></i> Lecture Notes</a>
+          <a class="dropdown-item" href="#"><i class="fa fa-sticky-note"></i> Essay Outline</a>
+          <hr>
+          <a class="dropdown-item" href="#"><i class="fa fa-sticky-note"></i> Meal Planner</a>
+          <a class="dropdown-item" href="#"><i class="fa fa-sticky-note"></i> Daily Reflection</a>
+        </div>
+      </div>
+      <div class="mt-3 pt-2" id="shortcut">
+        <button mat-button matTooltip="Shortcuts"
+                matTooltipPosition="right"><i class="fa fa-star"></i>
+        </button>
+      </div>
+      <div class="mt-3 pt-2" id="shortcutE">
+        <button mat-button><i class="fa fa-star"> Shortcuts</i>
+        </button>
+      </div>
+      <div class="pt-2" id="allNotes">
+        <button mat-button matTooltip="All Notes"
+                matTooltipPosition="right"><i class="fa fa-list"></i>
+        </button>
+      </div>
+      <div class="pt-2" id="allNotesE">
+        <button mat-button><i class="fa fa-list"> All Notes</i>
+        </button>
+      </div>
+      <div class="pt-2" id="notebook">
+        <button mat-button matTooltip="Notebook"
+                matTooltipPosition="right"><i class="fa fa-book"></i>
+        </button>
+      </div>
+      <div class="pt-2" id="notebookE">
+        <button mat-button><i class="fa fa-book"> Notebook</i>
+        </button>
+      </div>
+      <div class="pt-2" id="share">
+        <button mat-button matTooltip="Share with Me"
+                matTooltipPosition="right"><i class="fa fa-users"></i>
+        </button>
+      </div>
+      <div class="pt-2" id="shareE">
+        <button mat-button><i class="fa fa-users"> Share with Me</i>
+        </button>
+      </div>
+      <div class="pt-2" id="tag">
+        <button mat-button matTooltip="Tags"
+                matTooltipPosition="right"><i class="fa fa-tags"></i>
+        </button>
+      </div>
+      <div class="pt-2" id="tagE">
+        <button mat-button><i class="fa fa-tags"> Tags</i>
+        </button>
+      </div>
+      <div class="pt-2" id="trash">
+        <button mat-button matTooltip="Trash"
+                matTooltipPosition="right"><i class="fa fa-trash"></i>
+        </button>
+      </div>
+      <div class="pt-2" id="trashE">
+        <button mat-button><i class="fa fa-trash"> Trash</i>
+        </button>
+      </div>
+      <div class="pt-2" id="upgrade">
+        <button mat-button matTooltip="Upgrade"
+                matTooltipPosition="right"><i class="fa fa-money-bill-wave"></i>
+        </button>
+      </div>
+      <div class="pt-2" id="upgradeE">
+        <button mat-button><i class="fa fa-money-bill-wave"> Upgrade</i>
+        </button>
+      </div>
+      <div class="pt-3">
+        <button style="margin-top: 10px" mat-button matTooltip="Dispand side bar"
+                matTooltipPosition="right" id="dispand"><i class="fa fa-angle-double-left"></i></button>
+      </div>
+      <div class="pt-2">
+        <button mat-button matTooltip="Expand side bar"
+                matTooltipPosition="right" id="expand"><i class="fa fa-angle-double-right"></i></button>
+      </div>
+    </mat-sidenav-content>
 </mat-sidenav-container>
 
 
