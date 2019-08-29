@@ -11,7 +11,15 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import {SigninComponent} from './component/signin/signin.component';
 import { MainBannerComponent } from './component/main-banner/main-banner.component';
-import {MatButtonModule, MatCheckboxModule, MatFormFieldModule, MatInputModule, MatSelectModule, MatSidenavModule} from '@angular/material';
+import {
+  MatButtonModule,
+  MatCheckboxModule,
+  MatFormFieldModule,
+  MatInputModule,
+  MatSelectModule,
+  MatSidenavModule,
+  MatTooltipModule
+} from '@angular/material';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { DetailSidenavComponent } from './component/detail/detail-sidenav/detail-sidenav.component';
 import { DetailListComponent } from './component/detail/detail-list/detail-list.component';
@@ -45,7 +53,8 @@ import { DetailMainBodyComponent } from './component/detail/detail-main-body/det
     MatCheckboxModule,
     MatFormFieldModule,
     MatSelectModule,
-    MatInputModule
+    MatInputModule,
+    MatTooltipModule
   ],
   providers: [],
   bootstrap: [AppComponent]
