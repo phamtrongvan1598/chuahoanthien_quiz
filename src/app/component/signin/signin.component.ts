@@ -28,6 +28,7 @@ export class SigninComponent implements OnInit {
     this.authService.login(this.signinForm.value).subscribe(
       next => {
         localStorage.setItem('token', next.accessToken);
+        localStorage.setItem('username', next.username);
         this.authService.token = next.token;
         this.authService.header = new HttpHeaders(
           {

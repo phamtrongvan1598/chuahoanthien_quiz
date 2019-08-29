@@ -1,14 +1,30 @@
 <!-- Header -->
 <header id="header">
   <a class="logo" href="#"><img src="../../../assets/images/logo_transparent.png" alt="Logo"></a>
-  <nav>
+  <nav *ngIf="!this.authService.token">
     <button class="btn btn-outline-success" [routerLink]="['/api/auth/signin']">Đăng nhập</button>
     hoặc
     <button class="btn btn-outline-primary" routerLink='/api/auth/signup'>Đăng ký</button>
   </nav>
   <nav *ngIf="this.authService.token">
-    <a>
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRinpolF9EbTbZzc4nsBZGghiuT4DFe1kEEFAnXg-Y67oo7n6HN">
-    </a>
+    <div>
+      <a>
+        <img id="avatar"
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRinpolF9EbTbZzc4nsBZGghiuT4DFe1kEEFAnXg-Y67oo7n6HN"
+          height="35px" width="35px">
+      </a>
+      <a>
+        <div class="btn-group">
+          <button style="color: white; background: black" id="setting" type="button" class="btn dropdown-toggle" data-toggle="dropdown">
+            {{this.authService.username}}
+          </button>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="#">Logout</a>
+            <a class="dropdown-item" href="#">Setting</a>
+          </div>
+        </div>
+      </a>
+    </div>
+
   </nav>
 </header>

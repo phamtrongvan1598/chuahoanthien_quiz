@@ -15,6 +15,7 @@ const httpOption = {
 export class AuthService {
   private readonly API_URL = 'http://localhost:8080/api/auth/signin';
   token: string;
+  username: string;
   header: HttpHeaders;
 
   login(loginForm: FormGroup): Observable<any> {
@@ -23,6 +24,8 @@ export class AuthService {
 
   constructor(private httpClient: HttpClient) {
     this.token = localStorage.getItem('token');
+    this.username = localStorage.getItem('username');
+    console.log(this.username);
     this.header = new HttpHeaders({
       'Content-Type': 'application/json',
       Authorization: `Bearer ${this.token}`
