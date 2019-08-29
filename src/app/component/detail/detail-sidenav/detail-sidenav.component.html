@@ -1,8 +1,7 @@
 <mat-sidenav-container class="example-container" (backdropClick)="close('backdrop')">
   <mat-sidenav #sidenav (keydown.escape)="close('escape')" disableClose>
     <div class="pl-5">
-      <a style="text-decoration: none;color: rgba(255, 255, 255, 0.8)" href=""><img
-        src="../../../../assets/images/pic03.jpg" alt="" style="max-width: 12%; border-radius: 100%"></a>
+      <img src="../../../../assets/images/pic03.jpg" alt="" style="max-width: 12%; border-radius: 100%">
       <a href="" class="ml-2 dropdown-toggle" style="text-decoration: none;color: rgba(255, 255, 255, 0.8)"
          data-toggle="dropdown">
         User</a>
@@ -19,14 +18,14 @@
     </div>
     <hr>
     <div class="pl-5">
-      <mat-form-field>
+      <mat-form-field style="width: 80%">
         <input placeholder="Search all notes" id="search" type="text" matInput>
         <label for="search"></label>
       </mat-form-field>
     </div>
     <hr>
     <div class="btn-group ml-5" role="group" aria-label="Basic example">
-      <button style="width: 200px;border-top-left-radius: 50px; border-bottom-left-radius: 50px"
+      <button style="width: 200px; height: 50px; border-top-left-radius: 50px; border-bottom-left-radius: 50px"
               type="button" class="btn btn-success"><i class="fa fa-plus"></i> New Note
       </button>
       <button style="border-top-right-radius: 50px; border-bottom-right-radius: 50px"
@@ -60,6 +59,48 @@
   </mat-sidenav>
 
   <mat-sidenav-content>
-    <p><button mat-button (click)="sidenav.open()">Open</button></p>
+    <div class="ml-4 mb-3">
+      <img src="../../../../assets/images/pic03.jpg" alt=""
+           style="max-width: 3%; border-radius: 100%; margin-left: 3px">
+    </div>
+
+    <div class="ml-3 pt-2 pb-2">
+      <button mat-button><i class="fa fa-search"></i></button>
+    </div>
+    <div class="ml-3">
+      <button class="btn btn-success mt-3" style="border-radius: 100%; margin-left: 13px"><i class="fa fa-plus"></i>
+      </button>
+    </div>
+    <div class="ml-3 mt-3 pt-2 pb-2">
+      <button mat-button><i class="fa fa-star"></i>
+      </button>
+    </div>
+    <div class="ml-3 pt-2 pb-2">
+      <button mat-button><i class="fa fa-list"></i>
+      </button>
+    </div>
+    <div class="ml-3 pt-2 pb-2">
+      <button mat-button><i class="fa fa-book"></i>
+      </button>
+    </div>
+    <div class="ml-3 pt-2 pb-2">
+      <button mat-button><i class="fa fa-users"></i>
+      </button>
+    </div>
+    <div class="ml-3 pt-2 pb-2">
+      <button mat-button><i class="fa fa-tags"></i>
+      </button>
+    </div>
+    <div class="ml-3 pt-2 pb-2">
+      <button mat-button><i class="fa fa-trash"></i>
+      </button>
+    </div>
+    <div class="ml-3 pt-2 pb-2">
+      <button mat-button><i class="fa fa-money-bill-wave"></i>
+      </button>
+    </div>
+    <div class="ml-3 pt-2 pb-2">
+      <button mat-button (click)="sidenav.open()"><i class="fa fa-angle-double-right"></i></button>
+    </div>
   </mat-sidenav-content>
 </mat-sidenav-container>
