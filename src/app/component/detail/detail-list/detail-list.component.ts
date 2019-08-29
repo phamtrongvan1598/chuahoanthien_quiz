@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {NoteService} from '../../../service/note.service';
 
 @Component({
   selector: 'app-detail-list',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DetailListComponent implements OnInit {
 
-  constructor() { }
+  constructor(private noteService: NoteService) {
+  }
 
   ngOnInit() {
+  }
+
+  listAllNotes() {
+    return this.noteService.getAllNotes();
   }
 
 }
