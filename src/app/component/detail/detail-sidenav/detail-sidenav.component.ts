@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-detail-sidenav',
@@ -6,8 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./detail-sidenav.component.scss']
 })
 export class DetailSidenavComponent implements OnInit {
+  events: string[] = [];
+  opened: boolean;
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit() {
   }
