@@ -31,5 +31,26 @@
   <script src="assets/js/breakpoints.min.js"></script>
   <script src="assets/js/util.js"></script>
   <script src="assets/js/main.js"></script>
+  <script>
+      $(document).ready(function () {
+          let dispand = $("#dispand");
+          let expand = $("#expand");
+          let sideNav = $("mat-sidenav-content");
+
+          dispand.hide();
+
+          expand.click(function () {
+              sideNav.animate({width: '250px'}, {duration: 500});
+              expand.hide();
+              dispand.show();
+          });
+
+          dispand.click(function () {
+              sideNav.animate({width: '60px'}, {duration: 500});
+              dispand.hide();
+              expand.show();
+          })
+      })
+  </script>
 </body>
 </html>
