@@ -12,9 +12,6 @@ export class DetailListComponent implements OnInit {
   }
 
   ngOnInit() {
-  }
-
-  listAllNotes() {
     return this.noteService.getAllNotes().subscribe(data => {
         console.log('succsess');
       },
@@ -22,5 +19,4 @@ export class DetailListComponent implements OnInit {
         console.log('error');
       });
   }
-
 }
