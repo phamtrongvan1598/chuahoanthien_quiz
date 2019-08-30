@@ -1,123 +1,125 @@
 <mat-sidenav-container class="example-container">
-    <mat-sidenav-content class="d-flex align-items-start flex-column" id="sidenav" style=" width: 65px; background-color: #1C1C1C;">
-      <div class="ml-2 mb-3 mt-2">
+  <mat-sidenav-content class="d-flex align-items-start flex-column" id="sidenav"
+                       style=" width: 65px; background-color: #1C1C1C;">
+    <div class="ml-2 mb-3 mt-2">
+      <a href="" matTooltip="Tài khoản" matTooltipPosition="right">
         <img src="../../../../assets/images/pic03.jpg" alt=""
-             style="max-width: 40px; border-radius: 100%; margin-left: 3px">
+             style="max-width: 40px; border-radius: 100%; margin-left: 3px"></a>
+    </div>
+    <hr>
+    <div class="pt-2 pb-2" id="search">
+      <button mat-button matTooltip="Tìm kiếm"
+              matTooltipPosition="right"><i class="fa fa-search"></i></button>
+    </div>
+    <mat-form-field class="pb-2 ml-2 pt-2" id="searchE">
+      <input type="text" matInput id="s" placeholder="Tìm tất cả Note">
+      <label for="s"></label>
+    </mat-form-field>
+    <hr>
+    <div id="newNote">
+      <button class="btn btn-success mt-4" style="border-radius: 100%; margin-left: 13px"
+              matTooltip="Tạo Note"
+              matTooltipPosition="right"><i class="fa fa-plus"></i>
+      </button>
+    </div>
+    <div class="btn-group ml-3" role="group" aria-label="Basic example" id="newNoteE">
+      <button style="width: 150px; border-top-left-radius: 50px; border-bottom-left-radius: 50px"
+              type="button" class="btn btn-success"><i class="fa fa-plus"></i> Tạo Note mới
+      </button>
+      <button style="border-top-right-radius: 50px; border-bottom-right-radius: 50px"
+              type="button" class="btn btn-success dropdown-toggle"
+              data-toggle="dropdown"></button>
+      <div class="dropdown-menu dropdown-primary" style="width: 200px">
+        <a class="dropdown-item" href="#"><i class="fa fa-sticky-note"></i> Note trống</a>
+        <hr>
+        <a class="dropdown-item" href="#"><i class="fa fa-sticky-note"></i> Note họp</a>
+        <a class="dropdown-item" href="#"><i class="fa fa-sticky-note"></i> To-Do</a>
+        <a class="dropdown-item" href="#"><i class="fa fa-sticky-note"></i> Kế hoạch tuần</a>
+        <a class="dropdown-item" href="#"><i class="fa fa-sticky-note"></i> Kế hoạc dự án</a>
+        <hr>
+        <a class="dropdown-item" href="#"><i class="fa fa-sticky-note"></i> Bài giảng</a>
+        <a class="dropdown-item" href="#"><i class="fa fa-sticky-note"></i> Đề cương</a>
+        <hr>
+        <a class="dropdown-item" href="#"><i class="fa fa-sticky-note"></i> Kế hoạch nấu nướng</a>
+        <a class="dropdown-item" href="#"><i class="fa fa-sticky-note"></i> Phản ánh hàng ngày</a>
       </div>
-      <hr>
-      <div class="pt-2 pb-2" id="search">
-        <button mat-button matTooltip="Tìm kiếm"
-                matTooltipPosition="right"><i class="fa fa-search"></i></button>
-      </div>
-      <mat-form-field class="pb-2 ml-2 pt-2" id="searchE">
-        <input type="text" matInput id="s" placeholder="Tìm tất cả Note">
-        <label for="s"></label>
-      </mat-form-field>
-      <hr>
-      <div id="newNote">
-        <button class="btn btn-success mt-4" style="border-radius: 100%; margin-left: 13px"
-                matTooltip="Tạo Note"
-                matTooltipPosition="right"><i class="fa fa-plus"></i>
-        </button>
-      </div>
-      <div class="btn-group ml-3" role="group" aria-label="Basic example" id="newNoteE">
-        <button style="width: 150px; border-top-left-radius: 50px; border-bottom-left-radius: 50px"
-                type="button" class="btn btn-success"><i class="fa fa-plus"></i> Tạo Note mới
-        </button>
-        <button style="border-top-right-radius: 50px; border-bottom-right-radius: 50px"
-                type="button" class="btn btn-success dropdown-toggle"
-                data-toggle="dropdown"></button>
-        <div class="dropdown-menu dropdown-primary" style="width: 200px">
-          <a class="dropdown-item" href="#"><i class="fa fa-sticky-note"></i> Note trống</a>
-          <hr>
-          <a class="dropdown-item" href="#"><i class="fa fa-sticky-note"></i> Note họp</a>
-          <a class="dropdown-item" href="#"><i class="fa fa-sticky-note"></i> To-Do</a>
-          <a class="dropdown-item" href="#"><i class="fa fa-sticky-note"></i> Kế hoạch tuần</a>
-          <a class="dropdown-item" href="#"><i class="fa fa-sticky-note"></i> Kế hoạc dự án</a>
-          <hr>
-          <a class="dropdown-item" href="#"><i class="fa fa-sticky-note"></i> Bài giảng</a>
-          <a class="dropdown-item" href="#"><i class="fa fa-sticky-note"></i> Đề cương</a>
-          <hr>
-          <a class="dropdown-item" href="#"><i class="fa fa-sticky-note"></i> Kế hoạch nấu nướng</a>
-          <a class="dropdown-item" href="#"><i class="fa fa-sticky-note"></i> Phản ánh hàng ngày</a>
-        </div>
-      </div>
-      <div class="mt-3 pt-2" id="shortcut">
-        <button mat-button matTooltip="Lối tắt"
-                matTooltipPosition="right"><i class="fa fa-star"></i>
-        </button>
-      </div>
-      <div class="mt-3 pt-2" id="shortcutE">
-        <button mat-button><i class="fa fa-star"> Lối tắt</i>
-        </button>
-      </div>
-      <div class="pt-2" id="allNotes">
-        <button mat-button matTooltip="Notes"
-                matTooltipPosition="right"><i class="fa fa-list"></i>
-        </button>
-      </div>
-      <div class="pt-2" id="allNotesE">
-        <button mat-button><i class="fa fa-list"> Notes</i>
-        </button>
-      </div>
-      <div class="pt-2" id="notebook">
-        <button mat-button matTooltip="Sổ tay"
-                matTooltipPosition="right"><i class="fa fa-book"></i>
-        </button>
-      </div>
-      <div class="pt-2" id="notebookE">
-        <button mat-button><i class="fa fa-book"> Sổ tay</i>
-        </button>
-      </div>
-      <div class="pt-2" id="share">
-        <button mat-button matTooltip="Chia sẻ"
-                matTooltipPosition="right"><i class="fa fa-users"></i>
-        </button>
-      </div>
-      <div class="pt-2" id="shareE">
-        <button mat-button><i class="fa fa-users"> Chia sẻ</i>
-        </button>
-      </div>
-      <div class="pt-2" id="tag">
-        <button mat-button matTooltip="Tags"
-                matTooltipPosition="right"><i class="fa fa-tags"></i>
-        </button>
-      </div>
-      <div class="pt-2" id="tagE">
-        <button mat-button><i class="fa fa-tags"> Tags</i>
-        </button>
-      </div>
-      <div class="pt-2" id="trash">
-        <button mat-button matTooltip="Thùng rác"
-                matTooltipPosition="right"><i class="fa fa-trash"></i>
-        </button>
-      </div>
-      <div class="pt-2" id="trashE">
-        <button mat-button><i class="fa fa-trash"> Thùng rác</i>
-        </button>
-      </div>
-      <div class="pt-2" id="upgrade">
-        <button mat-button matTooltip="Nâng cấp"
-                matTooltipPosition="right"><i class="fa fa-money-bill-wave"></i>
-        </button>
-      </div>
-      <div class="pt-2" id="upgradeE">
-        <button mat-button><i class="fa fa-money-bill-wave"> Nâng cấp</i>
-        </button>
-      </div>
-      <hr>
-      <div>
-      </div>
-      <hr>
-      <div class="pt-3">
-        <button style="margin-top: 10px" mat-button matTooltip="Thu nhỏ thanh hỗ trợ"
-                matTooltipPosition="right" id="dispand"><i class="fa fa-angle-double-left"></i></button>
-      </div>
-      <div class="pt-2">
-        <button mat-button matTooltip="Mở rộng thanh hỗ trợ"
-                matTooltipPosition="right" id="expand"><i class="fa fa-angle-double-right"></i></button>
-      </div>
-    </mat-sidenav-content>
+    </div>
+    <div class="mt-3 pt-2" id="shortcut">
+      <button mat-button matTooltip="Lối tắt"
+              matTooltipPosition="right"><i class="fa fa-star"></i>
+      </button>
+    </div>
+    <div class="mt-3 pt-2" id="shortcutE">
+      <button mat-button><i class="fa fa-star"> Lối tắt</i>
+      </button>
+    </div>
+    <div class="pt-2" id="allNotes">
+      <button mat-button matTooltip="Notes"
+              matTooltipPosition="right"><i class="fa fa-list"></i>
+      </button>
+    </div>
+    <div class="pt-2" id="allNotesE">
+      <button mat-button><i class="fa fa-list"> Notes</i>
+      </button>
+    </div>
+    <div class="pt-2" id="notebook">
+      <button mat-button matTooltip="Sổ tay"
+              matTooltipPosition="right"><i class="fa fa-book"></i>
+      </button>
+    </div>
+    <div class="pt-2" id="notebookE">
+      <button mat-button><i class="fa fa-book"> Sổ tay</i>
+      </button>
+    </div>
+    <div class="pt-2" id="share">
+      <button mat-button matTooltip="Chia sẻ"
+              matTooltipPosition="right"><i class="fa fa-users"></i>
+      </button>
+    </div>
+    <div class="pt-2" id="shareE">
+      <button mat-button><i class="fa fa-users"> Chia sẻ</i>
+      </button>
+    </div>
+    <div class="pt-2" id="tag">
+      <button mat-button matTooltip="Tags"
+              matTooltipPosition="right"><i class="fa fa-tags"></i>
+      </button>
+    </div>
+    <div class="pt-2" id="tagE">
+      <button mat-button><i class="fa fa-tags"> Tags</i>
+      </button>
+    </div>
+    <div class="pt-2" id="trash">
+      <button mat-button matTooltip="Thùng rác"
+              matTooltipPosition="right"><i class="fa fa-trash"></i>
+      </button>
+    </div>
+    <div class="pt-2" id="trashE">
+      <button mat-button><i class="fa fa-trash"> Thùng rác</i>
+      </button>
+    </div>
+    <div class="pt-2" id="upgrade">
+      <button mat-button matTooltip="Nâng cấp"
+              matTooltipPosition="right"><i class="fa fa-money-bill-wave"></i>
+      </button>
+    </div>
+    <div class="pt-2" id="upgradeE">
+      <button mat-button><i class="fa fa-money-bill-wave"> Nâng cấp</i>
+      </button>
+    </div>
+    <hr>
+    <div>
+    </div>
+    <hr>
+    <div class="pt-3">
+      <button style="margin-top: 10px" mat-button matTooltip="Thu nhỏ thanh hỗ trợ"
+              matTooltipPosition="right" id="dispand"><i class="fa fa-angle-double-left"></i></button>
+    </div>
+    <div class="pt-2">
+      <button mat-button matTooltip="Mở rộng thanh hỗ trợ"
+              matTooltipPosition="right" id="expand"><i class="fa fa-angle-double-right"></i></button>
+    </div>
+  </mat-sidenav-content>
   <mat-sidenav-content class="col-md-4" style="background-color: #2659ff">
     <app-detail-list></app-detail-list>
   </mat-sidenav-content>
