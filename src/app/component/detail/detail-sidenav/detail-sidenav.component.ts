@@ -1,6 +1,7 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 import {MatSidenav} from '@angular/material';
 import {UserService} from '../../../service/user.service';
+import {AuthService} from '../../../auth/auth.service';
 
 @Component({
   selector: 'app-detail-sidenav',
@@ -13,7 +14,7 @@ export class DetailSidenavComponent implements OnInit {
   opened: boolean;
   reason = '';
 
-  constructor(private userService: UserService) {
+  constructor(private userService: UserService, private authService: AuthService) {
   }
 
   ngOnInit() {

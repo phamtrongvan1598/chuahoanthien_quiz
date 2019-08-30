@@ -3,6 +3,16 @@
       <div class="ml-2 mb-3 mt-2">
         <img src="../../../../assets/images/pic03.jpg" alt=""
              style="max-width: 40px; border-radius: 100%; margin-left: 3px">
+        <div class="btn-group">
+          <button style="background: black; border-radius: 15px; color: white" type="button" class="btn dropdown-toggle" data-toggle="dropdown">
+            {{this.authService.username}}
+
+          </button>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="#">Logout</a>
+            <a class="dropdown-item" href="#">Setting</a>
+          </div>
+        </div>
       </div>
       <hr>
       <div class="pt-2 pb-2" id="search">
