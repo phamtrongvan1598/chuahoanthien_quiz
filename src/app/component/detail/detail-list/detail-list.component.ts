@@ -12,7 +12,7 @@ export class DetailListComponent implements OnInit {
   }
 
   ngOnInit() {
-    return this.noteService.getListNoteByUser().subscribe(data => {
+    this.noteService.getListNoteByUser().subscribe(data => {
         console.log('succsess');
       },
       error => {

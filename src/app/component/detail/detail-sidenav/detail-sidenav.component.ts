@@ -1,6 +1,8 @@
-import {Component, OnInit, ViewChild} from '@angular/core';
-import {MatSidenav} from '@angular/material';
+import {Component, OnInit} from '@angular/core';
 import {UserService} from '../../../service/user.service';
+import {NoteService} from '../../../service/note.service';
+import {FormControl, FormGroup} from '@angular/forms';
+import {Note} from '../../../model/Note';
 
 @Component({
   selector: 'app-detail-sidenav',
@@ -8,23 +10,36 @@ import {UserService} from '../../../service/user.service';
   styleUrls: ['./detail-sidenav.component.scss']
 })
 export class DetailSidenavComponent implements OnInit {
-  @ViewChild('sidenav', {static: false}) sidenav: MatSidenav;
-  events: string[] = [];
-  opened: boolean;
-  reason = '';
+  createNoteForm: FormGroup;
+  note: Partial<Note>;
 
-  constructor(private userService: UserService) {
+  constructor(private userService: UserService, private noteService: NoteService) {
   }
 
   ngOnInit() {
+    this.createNoteForm = new FormGroup({
+      title: new FormControl(''),
+      content: new FormControl('')
+    });
+    this.note = {
+      title: 'Untitled',
+      content: ''
+    };
   }
 
   signout() {
     return this.userService.signout();
   }
 
-  close(reason: string) {
-    this.sidenav.close();
+  createNote() {
+    this.noteService.createNote(this.note).subscribe(
+      data => {
+        console.log('succsess');
+      },
+      error => {
+        console.log('error');
+      }
+    );
   }
 
 }
