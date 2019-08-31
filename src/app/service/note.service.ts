@@ -35,6 +35,6 @@ export class NoteService {
     return this.http.put<any>(this.ownerResource + '/' + id, note);
   }
   getListNoteByUser(): Observable<any> {
-    return this.http.get<any>(this.ownerResource + '/notes');
+    return this.http.get<any>(this.ownerResource + '/notes' + '/all');
   }
 }

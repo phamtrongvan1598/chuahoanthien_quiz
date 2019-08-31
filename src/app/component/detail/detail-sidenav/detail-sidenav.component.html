@@ -120,11 +120,11 @@
               matTooltipPosition="right" id="expand"><i class="fa fa-angle-double-right"></i></button>
     </div>
   </mat-sidenav-content>
-  <mat-sidenav-content class="col-md-4" style="background-color: #2659ff">
-    <app-detail-list></app-detail-list>
+  <mat-sidenav-content class="col-md-3" style="background-color: #2659ff">
+    <router-outlet></router-outlet>
   </mat-sidenav-content>
   <mat-sidenav-content class="col-md" style="background-color: #c10b0d">
-    <app-detail-main-body></app-detail-main-body>
+    <router-outlet></router-outlet>
   </mat-sidenav-content>
 </mat-sidenav-container>
 

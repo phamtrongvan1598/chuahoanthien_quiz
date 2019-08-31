@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {NoteService} from '../../../service/note.service';
+import {Note} from '../../../model/Note';
 
 @Component({
   selector: 'app-detail-list',
@@ -7,16 +8,21 @@ import {NoteService} from '../../../service/note.service';
   styleUrls: ['./detail-list.component.scss']
 })
 export class DetailListComponent implements OnInit {
+  note: Note;
+  notes: Note[];
+  updateNoteForm: FormData;
 
   constructor(private noteService: NoteService) {
   }
 
   ngOnInit() {
-    this.noteService.getListNoteByUser().subscribe(data => {
-        console.log('succsess');
-      },
-      error => {
-        console.log('error');
-      });
+  }
+
+  editNote() {
+    this.noteService.updateNote(this.note.id, this.updateNoteForm).subscribe(data => {
+      console.log('success');
+    }, error => {
+      console.log('error');
+    });
   }
 }
