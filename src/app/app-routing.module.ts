@@ -12,11 +12,11 @@ const routes: Routes = [
   {path: '', component: MainBodyComponent},
   {path: 'api/auth/signup', component: SignupComponent},
   {path: 'api/auth/signin', component: SigninComponent},
-  {path: 'api/owner/', component: DetailSidenavComponent,
-    children: [
-      {path: 'notes', component: DetailListComponent},
-      {path: 'note/:id', component: DetailMainBodyComponent}
-    ]
+  {path: 'api/owner/notes', component: DetailSidenavComponent,
+    // children: [
+    //   {path: 'notes', component: DetailListComponent},
+    //   {path: 'note/:id', component: DetailMainBodyComponent}
+    // ]
   }
 ];
 

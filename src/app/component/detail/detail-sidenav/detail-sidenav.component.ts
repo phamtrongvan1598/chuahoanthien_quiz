@@ -1,8 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {UserService} from '../../../service/user.service';
 import {NoteService} from '../../../service/note.service';
-import {FormControl, FormGroup} from '@angular/forms';
-import {Note} from '../../../model/Note';
 
 @Component({
   selector: 'app-detail-sidenav',
@@ -10,21 +8,15 @@ import {Note} from '../../../model/Note';
   styleUrls: ['./detail-sidenav.component.scss']
 })
 export class DetailSidenavComponent implements OnInit {
-  createNoteForm: FormGroup;
-  note: Partial<Note>;
+  note = {
+    title: 'Untitled',
+    content: 'Write content...'
+  };
 
   constructor(private userService: UserService, private noteService: NoteService) {
   }
 
   ngOnInit() {
-    this.createNoteForm = new FormGroup({
-      title: new FormControl(''),
-      content: new FormControl('')
-    });
-    this.note = {
-      title: 'Untitled',
-      content: ''
-    };
   }
 
   signout() {
@@ -41,5 +33,4 @@ export class DetailSidenavComponent implements OnInit {
       }
     );
   }
-
 }

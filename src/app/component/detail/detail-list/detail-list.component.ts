@@ -19,10 +19,5 @@ export class DetailListComponent implements OnInit {
   }
 
   editNote() {
-    this.noteService.updateNote(this.note.id, this.updateNoteForm).subscribe(data => {
-      console.log('success');
-    }, error => {
-      console.log('error');
-    });
   }
 }
