@@ -17,8 +17,8 @@ export class NoteService {
   constructor(private http: HttpClient) {
   }
 
-  createNote(data: Note): Observable<Note> {
-    return this.http.post<Note>(this.API_URL, data);
+  createNote(data: Partial<Note>): Observable<Note> {
+    return this.http.post<Note>(`${this.API_URL}`, data);
   }
 
   getAllNotes(): Observable<any> {

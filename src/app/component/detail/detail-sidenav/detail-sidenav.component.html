@@ -17,14 +17,16 @@
         <label for="s"></label>
       </mat-form-field>
       <div id="newNote">
-        <button class="btn btn-success mt-4" style="border-radius: 100%; margin-left: 13px"
-                matTooltip="Tạo Note"
-                matTooltipPosition="right" (click)="createNote()"><i class="fa fa-plus"></i>
-        </button>
+        <form (ngSubmit)="onSubmit()">
+          <button class="btn btn-success mt-4" style="border-radius: 100%; margin-left: 13px"
+                  matTooltip="Tạo Note"
+                  matTooltipPosition="right" type="submit"><i class="fa fa-plus"></i>
+          </button>
+        </form>
       </div>
       <div class="btn-group ml-3" role="group" aria-label="Basic example" id="newNoteE">
         <button style="width: 150px; border-top-left-radius: 50px; border-bottom-left-radius: 50px"
-                type="button" class="btn btn-success" (click)="createNote()"><i class="fa fa-plus"></i> Tạo Note mới
+                type="button" class="btn btn-success"><i class="fa fa-plus"></i> Tạo Note mới
         </button>
         <button style="border-top-right-radius: 50px; border-bottom-right-radius: 50px"
                 type="button" class="btn btn-success dropdown-toggle"
