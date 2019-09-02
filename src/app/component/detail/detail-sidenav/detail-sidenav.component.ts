@@ -16,8 +16,8 @@ export class DetailSidenavComponent implements OnInit {
 
   ngOnInit() {
     this.note = {
-      title: 'Untitled',
-      content: 'Write content...'
+      title: '',
+      content: ''
     };
   }
 

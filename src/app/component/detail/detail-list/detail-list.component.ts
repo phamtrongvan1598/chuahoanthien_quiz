@@ -8,16 +8,23 @@ import {Note} from '../../../model/Note';
   styleUrls: ['./detail-list.component.scss']
 })
 export class DetailListComponent implements OnInit {
-  note: Note;
   notes: Note[];
-  updateNoteForm: FormData;
 
   constructor(private noteService: NoteService) {
   }
 
   ngOnInit() {
+    this.listAllNotesByUser();
   }
 
-  editNote() {
+  listAllNotesByUser() {
+    this.noteService.getListNotesByUser().subscribe(data => {
+        console.log('succsess');
+        this.notes = data;
+      },
+      error => {
+        console.log('error');
+      }
+    );
   }
 }

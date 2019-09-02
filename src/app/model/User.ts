@@ -1,3 +1,5 @@
+import {Note} from './Note';
+
 export interface User {
   id: number;
   email: string;
@@ -5,10 +7,11 @@ export interface User {
   firstName: string;
   lastName: string;
   password: string;
-  enable: boolean;
+  enabled: boolean;
   dob: Date;
   phoneNumber: string;
   address: string;
-  role: string;
+  roles: string;
   avatarFileName: string;
+  notes: Note[];
 }

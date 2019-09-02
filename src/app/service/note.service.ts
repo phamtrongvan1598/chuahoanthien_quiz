@@ -34,7 +34,7 @@ export class NoteService {
   updateNote(id: number, note: FormData): Observable<any> {
     return this.http.put<any>(this.ownerResource + '/' + id, note);
   }
-  getListNoteByUser(): Observable<any> {
+  getListNotesByUser(): Observable<any> {
     return this.http.get<any>(this.ownerResource + '/notes' + '/all');
   }
 }

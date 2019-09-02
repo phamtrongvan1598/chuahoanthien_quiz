@@ -1,7 +1,16 @@
 <div style="margin-top: 20px">
   <h3>All Notes</h3>
-  <p>0 note</p>
+  <p>1 note</p>
   <hr>
-
 </div>
-<!--<div *ngFor=""></div>-->
+<div *ngFor="let note of notes">
+  <h2>{{note.title}}</h2>
+  <p>Created 1 minute ago</p>
+  <hr>
+</div>
+<div class="notes">
+  <a id="notes" href="">
+    <h5>Không tiêu đề</h5>
+    <p>Đã tạo 1 phút trước</p>
+  </a>
+</div>
