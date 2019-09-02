@@ -10,6 +10,8 @@ import {Note} from '../../../model/Note';
 })
 export class DetailSidenavComponent implements OnInit {
   note: Partial<Note>;
+  url = 'assets/js/sidenav.js';
+  loadAPI;
 
   constructor(private userService: UserService, private noteService: NoteService) {
   }
@@ -19,10 +21,24 @@ export class DetailSidenavComponent implements OnInit {
       title: '',
       content: ''
     };
+    this.loadAPI = new Promise(resolve => {
+      console.log('resolving promise...');
+      this.loadScript();
+    });
   }
 
   signout() {
     return this.userService.signout();
+  }
+
+  public loadScript() {
+    console.log('preparing to load...');
+    const node = document.createElement('script');
+    node.src = this.url;
+    node.type = 'text/javascript';
+    node.async = true;
+    node.charset = 'utf-8';
+    document.getElementsByTagName('head')[0].appendChild(node);
   }
 
   onSubmit() {

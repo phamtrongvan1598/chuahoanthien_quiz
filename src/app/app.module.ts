@@ -27,6 +27,7 @@ import {DetailSidenavComponent} from './component/detail/detail-sidenav/detail-s
 import {DetailListComponent} from './component/detail/detail-list/detail-list.component';
 import {DetailMainBodyComponent} from './component/detail/detail-main-body/detail-main-body.component';
 import {environment} from '../environments/environment';
+import { UploadFileComponent } from './component/upload-file/upload-file.component';
 
 // noinspection AngularInvalidImportedOrDeclaredSymbol
 @NgModule({
@@ -42,6 +43,7 @@ import {environment} from '../environments/environment';
     DetailSidenavComponent,
     DetailListComponent,
     DetailMainBodyComponent,
+    UploadFileComponent,
   ],
   imports: [
     BrowserModule,

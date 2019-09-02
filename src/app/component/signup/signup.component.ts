@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {UserService} from '../../service/user.service';
 import {Router} from '@angular/router';
-import {log} from 'util';
+import {User} from '../../model/User';
 
 @Component({
   selector: 'app-signup',
@@ -12,6 +12,7 @@ import {log} from 'util';
 export class SignupComponent implements OnInit {
   registerForm: FormGroup;
   isAgreedWithLicenses = false;
+  user: Partial<User>;
 
   constructor(private fb: FormBuilder, private userService: UserService, private router: Router) {
   }
@@ -27,6 +28,10 @@ export class SignupComponent implements OnInit {
       firstName: [null, Validators.required],
       lastName: [null, Validators.required]
     });
+  }
+
+  onChange($event) {
+    this.user.avatarFileName = $event;
   }
 
   onSubmit() {
