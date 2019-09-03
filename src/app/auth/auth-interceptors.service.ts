@@ -10,17 +10,14 @@ const TOKEN_HEADER_KEY = 'Authorization';
 })
 export class AuthInterceptorsService implements HttpInterceptor {
 
-  constructor(private token: TokenStorageService) { }
+  constructor() { }
 
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     let authReq = req;
-    const token = this.token.getToken();
+    const token = localStorage.getItem('token');
     if (token != null) {
       authReq = req.clone({ headers: req.headers.set(TOKEN_HEADER_KEY, 'Bearer ' + token) });
     }
     return next.handle(authReq);
   }
 }
-export const httpInterceptorProviders = [
-  { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptorsService, multi: true }
-];

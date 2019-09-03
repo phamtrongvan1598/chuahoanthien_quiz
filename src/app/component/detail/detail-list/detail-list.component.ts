@@ -23,7 +23,7 @@ export class DetailListComponent implements OnInit {
         this.notes = data;
       },
       error => {
-        console.log('error');
+        console.log(error);
       }
     );
   }

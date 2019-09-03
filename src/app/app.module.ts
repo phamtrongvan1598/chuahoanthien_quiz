@@ -8,7 +8,7 @@ import {MainBodyComponent} from './component/main-body/main-body.component';
 import {MDBBootstrapModule} from 'angular-bootstrap-md';
 import {SignupComponent} from './component/signup/signup.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import {HttpClientModule} from '@angular/common/http';
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {SigninComponent} from './component/signin/signin.component';
 import {MainBannerComponent} from './component/main-banner/main-banner.component';
 import {AngularFireModule} from 'angularfire2';
@@ -28,6 +28,7 @@ import {DetailListComponent} from './component/detail/detail-list/detail-list.co
 import {DetailMainBodyComponent} from './component/detail/detail-main-body/detail-main-body.component';
 import {environment} from '../environments/environment';
 import { UploadFileComponent } from './component/upload-file/upload-file.component';
+import {AuthInterceptorsService} from './auth/auth-interceptors.service';
 
 @NgModule({
   declarations: [
@@ -63,7 +64,9 @@ import { UploadFileComponent } from './component/upload-file/upload-file.compone
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireStorageModule
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptorsService, multi: true }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {
