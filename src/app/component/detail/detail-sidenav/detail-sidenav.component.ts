@@ -46,6 +46,7 @@ export class DetailSidenavComponent implements OnInit {
     this.noteService.createNote(this.note).subscribe(
       data => {
         console.log('succsess');
+        window.location.reload();
       },
       error => {
         console.log('error');

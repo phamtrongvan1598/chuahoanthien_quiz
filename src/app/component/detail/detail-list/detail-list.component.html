@@ -1,17 +1,14 @@
 <div style="margin-top: 20px">
-  <h3>All Notes</h3>
-  <p>1 note</p>
+  <h3>Tất cả ghi chú</h3>
+  <p>1 ghi chú</p>
   <hr>
 </div>
-<div *ngFor="let note of notes">
-  <a href=""><h5 *ngIf="note.title">{{note.title}}</h5>
+<a href="">
+  <div class="notes" *ngFor="let note of notes" style="padding-top: 10px">
+    <h5 *ngIf="note.title; else elseBlock">{{note.title}}</h5>
+    <ng-template #elseBlock><h5>Không tiêu đề</h5></ng-template>
     <p>Đã tạo 1 phút trước</p>
-  </a>
-  <hr>
-</div>
-<!--<div class="notes">-->
-<!--  <a id="notes" href="">-->
-<!--    <h5>Không tiêu đề</h5>-->
-<!--    <p>Đã tạo 1 phút trước</p>-->
-<!--  </a>-->
-<!--</div>-->
+    <hr>
+  </div>
+</a>
+
