@@ -30,4 +30,13 @@ export class DetailMainBodyComponent implements OnInit {
       });
   }
 
+  deleteNote() {
+    const id = +this.route.snapshot.paramMap.get('id');
+    this.noteService.deleteNote(id).subscribe(data => {
+        console.log('success');
+      },
+      error => {
+        console.log(error);
+      });
+  }
 }
