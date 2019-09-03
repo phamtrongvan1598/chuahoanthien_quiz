@@ -42,6 +42,6 @@ a {
 ::ng-deep.mat-input-element {
   color: #111111;
 }
-::ng-deep textarea:focus {
+::ng-deep.mat-focused textarea {
   background: transparent;
 }

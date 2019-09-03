@@ -19,7 +19,7 @@ const routes: Routes = [
       {path: 'notes/:id', component: DetailMainBodyComponent}
     ]
   },
-  {path: 'api/owner/notes/:id', component: DetailSidenavComponent}
+  // {path: 'api/owner/notes/:id', component: DetailMainBodyComponent}
 ];
 
 @NgModule({

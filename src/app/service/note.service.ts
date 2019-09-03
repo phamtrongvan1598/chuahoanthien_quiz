@@ -3,6 +3,7 @@ import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {Note} from '../model/Note';
 import {StandardRespond} from '../model/StandardRespond';
+import {FormGroup} from '@angular/forms';
 
 const httpOption = {
   headers: new HttpHeaders({'Content-Type': 'application/json'})
@@ -31,8 +32,8 @@ export class NoteService {
     return this.http.delete(this.ownerResource + '/' + id);
   }
 
-  updateNote(id: number, data: StandardRespond): Observable<Note> {
-    return this.http.put<Note>(this.ownerResource + '/note' + '/' + id, data);
+  updateNote(id: number, data: FormGroup): Observable<any> {
+    return this.http.put<any>(this.ownerResource + '/note' + '/' + id, data);
   }
 
   getListNotesByUser(): Observable<any> {

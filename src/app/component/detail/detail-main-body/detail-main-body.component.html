@@ -43,17 +43,20 @@
 </div>
 <hr>
 <div>
-  <form class="example-form m-5" (ngSubmit)="onSubmit()">
+  <form class="example-form m-5" [formGroup]="updateForm" (ngSubmit)="onSubmit()">
     <div>
       <mat-form-field class="example-full-width">
-        <input matInput placeholder="Tiêu đề" value="{{noteDetail.data.title}}">
+        <input matInput formControlName="title"
+               placeholder="Tiêu đề" value="{{noteDetail.data.title}}">
       </mat-form-field>
     </div>
     <div>
       <mat-form-field class="example-full-width">
-        <textarea matInput placeholder="Nội dung" value="{{noteDetail.data.content}}" cols="30" rows="20"></textarea>
+        <textarea matInput class="form-control" formControlName="content"
+                  placeholder="Nội dung" value="{{noteDetail.data.content}}" cols="30" rows="20">
+        </textarea>
       </mat-form-field>
     </div>
-      <button class="btn deep-blue-gradient" type="submit">Lưu lại</button>
+    <button class="btn deep-blue-gradient" type="submit">Lưu lại</button>
   </form>
 </div>

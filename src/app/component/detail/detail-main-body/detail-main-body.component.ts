@@ -3,7 +3,7 @@ import {NoteService} from '../../../service/note.service';
 import {ActivatedRoute, Router} from '@angular/router';
 import {Note} from '../../../model/Note';
 import {StandardRespond} from '../../../model/StandardRespond';
-import {FormBuilder, FormGroup} from '@angular/forms';
+import {FormBuilder, FormControl, FormGroup} from '@angular/forms';
 
 @Component({
   selector: 'app-detail-main-body',
@@ -15,13 +15,15 @@ export class DetailMainBodyComponent implements OnInit {
   updateForm: FormGroup;
 
   constructor(private noteService: NoteService, private router: Router,
-              private route: ActivatedRoute, private fb: FormBuilder) {
+              private route: ActivatedRoute) {
   }
 
   ngOnInit() {
     this.listNoteDetailById();
-    this.updateForm = this.fb.group([
-    ]);
+    this.updateForm = new FormGroup({
+      title: new FormControl(''),
+      content: new FormControl('')
+    });
   }
 
   listNoteDetailById() {
@@ -41,8 +43,8 @@ export class DetailMainBodyComponent implements OnInit {
 
   onSubmit() {
     const id = +this.route.snapshot.paramMap.get('id');
-    this.noteService.updateNote(id, this.noteDetail).subscribe(data => {
-        this.noteDetail.data = data;
+    this.noteService.updateNote(id, this.updateForm).subscribe(data => {
+        this.updateForm = data;
         console.log('success');
       },
       error => {
