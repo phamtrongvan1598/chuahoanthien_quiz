@@ -15,7 +15,7 @@ const routes: Routes = [
   {path: 'api/auth/signin', component: SigninComponent},
   {path: 'api/owner', component: DetailSidenavComponent,
     children: [
-      {path: 'notes', component: DetailListComponent},
+      // {path: 'notes', component: DetailListComponent},
       {path: 'notes/:id', component: DetailMainBodyComponent}
     ]
   },

@@ -42,3 +42,7 @@ mat-sidenav-content {
   max-height: 100%;
 }
 
+.dropdown-menu {
+  position: absolute;
+  z-index: 1000;
+}

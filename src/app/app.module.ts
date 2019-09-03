@@ -16,8 +16,8 @@ import {AngularFireStorageModule} from 'angularfire2/storage';
 import {
   MatButtonModule,
   MatCheckboxModule,
-  MatFormFieldModule,
-  MatInputModule,
+  MatFormFieldModule, MatIconModule,
+  MatInputModule, MatMenuModule,
   MatSelectModule,
   MatSidenavModule,
   MatTooltipModule
@@ -62,7 +62,9 @@ import {AuthInterceptorsService} from './auth/auth-interceptors.service';
     MatInputModule,
     MatTooltipModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
-    AngularFireStorageModule
+    AngularFireStorageModule,
+    MatMenuModule,
+    MatIconModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptorsService, multi: true }

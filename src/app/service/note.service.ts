@@ -2,6 +2,7 @@ import {Injectable} from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {Note} from '../model/Note';
+import {StandardRespond} from '../model/StandardRespond';
 
 const httpOption = {
   headers: new HttpHeaders({'Content-Type': 'application/json'})
@@ -13,6 +14,7 @@ const httpOption = {
 export class NoteService {
   private ownerResource = 'http://localhost:8080/api/owner';
   private readonly API_URL = 'http://localhost:8080/api/owner/create-note';
+  imageUrls: string[] = [];
 
   constructor(private http: HttpClient) {
   }
@@ -29,7 +31,7 @@ export class NoteService {
     return this.http.delete(this.ownerResource + '/' + id);
   }
 
-  updateNote(id: number, data: Partial<Note>): Observable<Note> {
+  updateNote(id: number, data: StandardRespond): Observable<Note> {
     return this.http.put<Note>(this.ownerResource + '/notes' + id, data);
   }
 

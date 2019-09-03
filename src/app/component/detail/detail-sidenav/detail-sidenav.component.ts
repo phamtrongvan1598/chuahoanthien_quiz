@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {UserService} from '../../../service/user.service';
 import {NoteService} from '../../../service/note.service';
 import {Note} from '../../../model/Note';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-detail-sidenav',
@@ -13,7 +14,7 @@ export class DetailSidenavComponent implements OnInit {
   url = 'assets/js/sidenav.js';
   loadAPI;
 
-  constructor(private userService: UserService, private noteService: NoteService) {
+  constructor(private userService: UserService, private noteService: NoteService, private router: Router) {
   }
 
   ngOnInit() {

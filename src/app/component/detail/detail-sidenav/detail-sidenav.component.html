@@ -3,9 +3,19 @@
                        style=" width: 65px; background-color: #1C1C1C; justify-content: space-between">
     <div>
       <div class="ml-2 mt-3">
-        <a href="" matTooltip="Tài khoản" matTooltipPosition="right">
+        <a href="" matTooltip="Tài khoản" matTooltipPosition="right" type="button" id="dropdownMenuMenu" data-toggle="dropdown"
+           aria-haspopup="true" aria-expanded="false">
           <img src="../../../../assets/images/pic03.jpg" alt=""
                style="max-width: 40px; border-radius: 100%; margin-left: 3px"></a>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuMenu">
+          <button class="dropdown-item" type="button">Cài đặt</button>
+          <button class="dropdown-item" type="button">Trợ giúp</button>
+          <button class="dropdown-item" type="button">Có gì hot?</button>
+          <button class="dropdown-item" type="button">Về phiên bản cũ hơn</button>
+          <hr>
+          <button class="dropdown-item" type="button" (click)="signout()">Đăng xuất</button>
+
+        </div>
       </div>
       <hr>
       <div class="pt-2" id="search">

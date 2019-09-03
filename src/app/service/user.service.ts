@@ -19,5 +19,6 @@ export class UserService {
 
   signout() {
     window.localStorage.clear();
+    window.location.replace('api/auth/signin');
   }
 }
