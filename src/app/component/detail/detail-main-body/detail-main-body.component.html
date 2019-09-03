@@ -43,10 +43,10 @@
 </div>
 <hr>
 <div>
-  <form class="example-form m-5">
+  <form class="example-form m-5" (ngSubmit)="onSubmit()">
     <div>
       <mat-form-field class="example-full-width">
-        <input [(ngModel)]="noteDetail.data.title" matInput placeholder="Tiêu đề" value="{{noteDetail.data.title}}">
+        <input matInput placeholder="Tiêu đề" value="{{noteDetail.data.title}}">
       </mat-form-field>
     </div>
     <div>
@@ -54,5 +54,6 @@
         <textarea matInput placeholder="Nội dung" value="{{noteDetail.data.content}}" cols="30" rows="20"></textarea>
       </mat-form-field>
     </div>
+      <button class="btn deep-blue-gradient" type="submit">Lưu lại</button>
   </form>
 </div>

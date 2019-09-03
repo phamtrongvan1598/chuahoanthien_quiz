@@ -3,6 +3,7 @@ import {NoteService} from '../../../service/note.service';
 import {ActivatedRoute, Router} from '@angular/router';
 import {Note} from '../../../model/Note';
 import {StandardRespond} from '../../../model/StandardRespond';
+import {FormBuilder, FormGroup} from '@angular/forms';
 
 @Component({
   selector: 'app-detail-main-body',
@@ -11,11 +12,19 @@ import {StandardRespond} from '../../../model/StandardRespond';
 })
 export class DetailMainBodyComponent implements OnInit {
   noteDetail: StandardRespond;
+  updateForm: FormGroup;
 
-  constructor(private noteService: NoteService, private router: Router, private route: ActivatedRoute) {
+  constructor(private noteService: NoteService, private router: Router,
+              private route: ActivatedRoute, private fb: FormBuilder) {
   }
 
   ngOnInit() {
+    this.listNoteDetailById();
+    this.updateForm = this.fb.group([
+    ]);
+  }
+
+  listNoteDetailById() {
     const id = +this.route.snapshot.paramMap.get('id');
     this.noteService.getNoteInfoById(id).subscribe(data => {
         this.noteDetail = data;
@@ -23,6 +32,17 @@ export class DetailMainBodyComponent implements OnInit {
           content: data.content, id: data.id, title: data.title
 
         };
+        console.log('success');
+      },
+      error => {
+        console.log(error);
+      });
+  }
+
+  onSubmit() {
+    const id = +this.route.snapshot.paramMap.get('id');
+    this.noteService.updateNote(id, this.noteDetail).subscribe(data => {
+        this.noteDetail.data = data;
         console.log('success');
       },
       error => {

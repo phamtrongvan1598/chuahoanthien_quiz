@@ -32,7 +32,7 @@ export class NoteService {
   }
 
   updateNote(id: number, data: StandardRespond): Observable<Note> {
-    return this.http.put<Note>(this.ownerResource + '/notes' + id, data);
+    return this.http.put<Note>(this.ownerResource + '/note' + '/' + id, data);
   }
 
   getListNotesByUser(): Observable<any> {

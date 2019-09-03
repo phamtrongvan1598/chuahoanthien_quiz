@@ -6,6 +6,7 @@ a {
 #desc button {
   color: rgba(2, 12, 36, 0.3);
 }
+
 .example-form {
   min-width: 150px;
   max-width: 900px;
@@ -13,7 +14,8 @@ a {
 }
 
 .example-full-width {
-  width: 100%;
+  max-width: 100%;
+  width: 90%;
 }
 
 ::ng-deep .mat-focused .mat-form-field-label {
@@ -21,16 +23,25 @@ a {
   color: green !important;
 }
 
+::ng-deep .mat-form-field-label {
+  /*change color of label*/
+  color: snow !important;
+}
+
 ::ng-deep.mat-form-field-underline {
   /*change color of underline*/
-  background-color: green !important;
+  background: -webkit-linear-gradient(to right, #59c173, #a17fe0, #5d26c1) !important;
+  background: linear-gradient(to right, #59c173, #a17fe0, #5d26c1) !important;
 }
 
 ::ng-deep.mat-form-field-ripple {
   /*change color of underline when focused*/
-  background-color: green !important;;
-}
+  background: -webkit-linear-gradient(to right, #59c173, #a17fe0, #5d26c1) !important;
+  background: linear-gradient(to right, #59c173, #a17fe0, #5d26c1) !important;}
 
 ::ng-deep.mat-input-element {
   color: #111111;
+}
+::ng-deep textarea:focus {
+  background: transparent;
 }
