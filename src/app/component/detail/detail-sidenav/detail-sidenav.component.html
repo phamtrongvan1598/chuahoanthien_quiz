@@ -25,26 +25,26 @@
         </form>
       </div>
       <div class="btn-group ml-3" role="group" aria-label="Basic example" id="newNoteE">
-        <button style="width: 150px; border-top-left-radius: 50px; border-bottom-left-radius: 50px"
-                type="button" class="btn btn-success"><i class="fa fa-plus"></i> Tạo Note mới
-        </button>
-        <button style="border-top-right-radius: 50px; border-bottom-right-radius: 50px"
-                type="button" class="btn btn-success dropdown-toggle"
-                data-toggle="dropdown"></button>
-        <div class="dropdown-menu dropdown-primary" style="width: 200px">
-          <a class="dropdown-item" href="#"><i class="fa fa-sticky-note"></i> Note trống</a>
-          <hr>
-          <a class="dropdown-item" href="#"><i class="fa fa-sticky-note"></i> Note họp</a>
-          <a class="dropdown-item" href="#"><i class="fa fa-sticky-note"></i> To-Do</a>
-          <a class="dropdown-item" href="#"><i class="fa fa-sticky-note"></i> Kế hoạch tuần</a>
-          <a class="dropdown-item" href="#"><i class="fa fa-sticky-note"></i> Kế hoạc dự án</a>
-          <hr>
-          <a class="dropdown-item" href="#"><i class="fa fa-sticky-note"></i> Bài giảng</a>
-          <a class="dropdown-item" href="#"><i class="fa fa-sticky-note"></i> Đề cương</a>
-          <hr>
-          <a class="dropdown-item" href="#"><i class="fa fa-sticky-note"></i> Kế hoạch nấu nướng</a>
-          <a class="dropdown-item" href="#"><i class="fa fa-sticky-note"></i> Phản ánh hàng ngày</a>
-        </div>
+          <button style="width: 150px; border-top-left-radius: 50px; border-bottom-left-radius: 50px"
+                  type="button" class="btn btn-success"><i class="fa fa-plus"></i> Tạo Note mới
+          </button>
+          <button style="border-top-right-radius: 50px; border-bottom-right-radius: 50px"
+                  type="button" class="btn btn-success dropdown-toggle"
+                  data-toggle="dropdown"></button>
+          <div class="dropdown-menu dropdown-primary" style="width: 200px">
+            <a class="dropdown-item" href="#"><i class="fa fa-sticky-note"></i> Note trống</a>
+            <hr>
+            <a class="dropdown-item" href="#"><i class="fa fa-sticky-note"></i> Note họp</a>
+            <a class="dropdown-item" href="#"><i class="fa fa-sticky-note"></i> To-Do</a>
+            <a class="dropdown-item" href="#"><i class="fa fa-sticky-note"></i> Kế hoạch tuần</a>
+            <a class="dropdown-item" href="#"><i class="fa fa-sticky-note"></i> Kế hoạc dự án</a>
+            <hr>
+            <a class="dropdown-item" href="#"><i class="fa fa-sticky-note"></i> Bài giảng</a>
+            <a class="dropdown-item" href="#"><i class="fa fa-sticky-note"></i> Đề cương</a>
+            <hr>
+            <a class="dropdown-item" href="#"><i class="fa fa-sticky-note"></i> Kế hoạch nấu nướng</a>
+            <a class="dropdown-item" href="#"><i class="fa fa-sticky-note"></i> Phản ánh hàng ngày</a>
+          </div>
       </div>
       <div class="mt-3 pt-2" id="shortcut">
         <button mat-button matTooltip="Lối tắt"
@@ -129,7 +129,8 @@
     <app-detail-list></app-detail-list>
   </mat-sidenav-content>
   <mat-sidenav-content class="col-md" style="border-left: 1px solid rgba(2, 12, 36, 0.3)">
-    <app-detail-main-body></app-detail-main-body>
+    <!--    <app-detail-main-body></app-detail-main-body>-->
+    <router-outlet></router-outlet>
   </mat-sidenav-content>
 </mat-sidenav-container>
 

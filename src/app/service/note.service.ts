@@ -21,19 +21,18 @@ export class NoteService {
     return this.http.post<Note>(`${this.API_URL}`, data);
   }
 
-  getAllNotes(): Observable<any> {
-    return this.http.get<any>(this.ownerResource + '/notes');
-  }
-
   getNoteInfoById(id: number): Observable<any> {
     return this.http.get(this.ownerResource + '/note' + '/' + id);
   }
+
   deleteNote(id: number): Observable<any> {
     return this.http.delete(this.ownerResource + '/' + id);
   }
-  updateNote(id: number, note: FormData): Observable<any> {
-    return this.http.put<any>(this.ownerResource + '/' + id, note);
+
+  updateNote(id: number, data: Partial<Note>): Observable<Note> {
+    return this.http.put<Note>(this.ownerResource + '/notes' + id, data);
   }
+
   getListNotesByUser(): Observable<any> {
     return this.http.get<any>(this.ownerResource + '/notes' + '/all');
   }

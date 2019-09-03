@@ -41,7 +41,7 @@ export class SigninComponent implements OnInit {
         );
         if (next.accessToken) {
           this.isSignedIn = true;
-          this.router.navigateByUrl('/api/owner/notes');
+          this.router.navigateByUrl('/api/owner');
         }
         console.log(next.accessToken);
       }
