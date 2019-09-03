@@ -11,8 +11,8 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import {SigninComponent} from './component/signin/signin.component';
 import {MainBannerComponent} from './component/main-banner/main-banner.component';
-import {AngularFireModule} from '@angular/fire';
-import {AngularFirestoreModule} from '@angular/fire/firestore';
+import {AngularFireModule} from 'angularfire2';
+import {AngularFireStorageModule} from 'angularfire2/storage';
 import {
   MatButtonModule,
   MatCheckboxModule,
@@ -29,7 +29,6 @@ import {DetailMainBodyComponent} from './component/detail/detail-main-body/detai
 import {environment} from '../environments/environment';
 import { UploadFileComponent } from './component/upload-file/upload-file.component';
 
-// noinspection AngularInvalidImportedOrDeclaredSymbol
 @NgModule({
   declarations: [
     AppComponent,
@@ -62,7 +61,7 @@ import { UploadFileComponent } from './component/upload-file/upload-file.compone
     MatInputModule,
     MatTooltipModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
-    AngularFirestoreModule
+    AngularFireStorageModule
   ],
   providers: [],
   bootstrap: [AppComponent]

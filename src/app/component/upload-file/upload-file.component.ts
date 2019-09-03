@@ -1,6 +1,6 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
-import {AngularFireStorage, AngularFireStorageReference} from '@angular/fire/storage';
 import {HttpClient} from '@angular/common/http';
+import { AngularFireStorage, AngularFireStorageReference } from 'angularfire2/storage';
 
 @Component({
   selector: 'app-upload-file',
@@ -23,6 +23,30 @@ export class UploadFileComponent implements OnInit {
   onFileChanged(event) {
     this.selectedFile = event.target.files[0];
   }
+
+  // async onUpload() {
+  //   try {
+  //     this.houseService.imageUrls = [];
+  //     this.index = 1;
+  //     this.btn = 'Uploading';
+  //     for (const file of this.files) {
+  //       const id = Math.random().toString(36).substring(2); // Create a random string
+  //       this.ref = this.afStorage.ref(id);
+  //       // await
+  //       const snapshot: UploadTaskSnapshot = await this.ref.put(file);
+  //       const downloadUrl = await snapshot.ref.getDownloadURL();
+  //
+  //       this.houseService.imageUrls.push(downloadUrl);
+  //       this.percent = Math.round(this.index / this.totalFile * 100);
+  //       // prevent index++ when index=totalFile
+  //       this.index = this.index === this.totalFile ? this.index : this.index + 1;
+  //     }
+  //   } catch (error) {
+  //     console.log(`Failed to upload file and get link - ${error}`);
+  //   }
+  //   console.log(this.houseService.imageUrls);
+  //   this.btn = 'Upload';
+  // }
 
   upload() {
     const id = Math.random().toString(36).substring(2); // Create a random string

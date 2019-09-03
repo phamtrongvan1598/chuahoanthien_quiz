@@ -6,6 +6,7 @@ import {MainBodyComponent} from './component/main-body/main-body.component';
 import {DetailSidenavComponent} from './component/detail/detail-sidenav/detail-sidenav.component';
 import {DetailListComponent} from './component/detail/detail-list/detail-list.component';
 import {DetailMainBodyComponent} from './component/detail/detail-main-body/detail-main-body.component';
+import {UploadFileComponent} from './component/upload-file/upload-file.component';
 
 
 const routes: Routes = [
@@ -17,7 +18,7 @@ const routes: Routes = [
     //   {path: 'notes', component: DetailListComponent},
     //   {path: 'note/:id', component: DetailMainBodyComponent}
     // ]
-  }
+  },
 ];
 
 @NgModule({
