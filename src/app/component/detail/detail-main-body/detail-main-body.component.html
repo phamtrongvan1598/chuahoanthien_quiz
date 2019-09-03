@@ -46,7 +46,7 @@
   <form class="example-form m-5">
     <div>
       <mat-form-field class="example-full-width">
-        <input matInput placeholder="Tiêu đề" value="{{noteDetail.data.title}}">
+        <input [(ngModel)]="noteDetail.data.title" matInput placeholder="Tiêu đề" value="{{noteDetail.data.title}}">
       </mat-form-field>
     </div>
     <div>
