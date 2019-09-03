@@ -34,6 +34,7 @@ export class DetailMainBodyComponent implements OnInit {
     const id = +this.route.snapshot.paramMap.get('id');
     this.noteService.deleteNote(id).subscribe(data => {
         console.log('success');
+        window.location.replace('api/owner');
       },
       error => {
         console.log(error);

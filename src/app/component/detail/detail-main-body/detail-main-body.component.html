@@ -43,6 +43,16 @@
 </div>
 <hr>
 <div>
-  <h5>{{noteDetail.data.title}}</h5>
-  <p style="color: #1C1C1C">{{noteDetail.data.content}}</p>
+  <form class="example-form m-5">
+    <div>
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Tiêu đề" value="{{noteDetail.data.title}}">
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field class="example-full-width">
+        <textarea matInput placeholder="Nội dung" value="{{noteDetail.data.content}}" cols="30" rows="20"></textarea>
+      </mat-form-field>
+    </div>
+  </form>
 </div>
