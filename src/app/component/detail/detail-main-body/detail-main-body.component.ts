@@ -13,6 +13,7 @@ import {FormBuilder, FormControl, FormGroup} from '@angular/forms';
 export class DetailMainBodyComponent implements OnInit {
   noteDetail: StandardRespond;
   updateForm: FormGroup;
+  note: Note;
 
   constructor(private noteService: NoteService, private router: Router,
               private route: ActivatedRoute) {
@@ -32,7 +33,6 @@ export class DetailMainBodyComponent implements OnInit {
         this.noteDetail = data;
         this.noteDetail.data = {
           content: data.content, id: data.id, title: data.title
-
         };
         console.log('success');
       },
@@ -44,7 +44,8 @@ export class DetailMainBodyComponent implements OnInit {
   onSubmit() {
     const id = +this.route.snapshot.paramMap.get('id');
     this.noteService.updateNote(id, this.updateForm).subscribe(data => {
-        this.updateForm = data;
+        this.note.title = JSON.stringify(data.data.title);
+        this.note.content = JSON.stringify(data.data.content);
         console.log('success');
       },
       error => {

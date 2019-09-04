@@ -29,6 +29,7 @@ import {DetailMainBodyComponent} from './component/detail/detail-main-body/detai
 import {environment} from '../environments/environment';
 import { UploadFileComponent } from './component/upload-file/upload-file.component';
 import {AuthInterceptorsService} from './auth/auth-interceptors.service';
+import {Router, RouterModule} from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -64,7 +65,8 @@ import {AuthInterceptorsService} from './auth/auth-interceptors.service';
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireStorageModule,
     MatMenuModule,
-    MatIconModule
+    MatIconModule,
+    RouterModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptorsService, multi: true }
