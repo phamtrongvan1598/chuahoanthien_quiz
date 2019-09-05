@@ -1,11 +1,11 @@
-<div style="margin-top: 20px">
+<div *ngIf="notes; else elseBlock1" style="margin-top: 20px">
   <h3>All notes</h3>
   <p>{{notes.length}} note(s)</p>
   <hr>
 </div>
 
 <a *ngFor="let note of notes" [routerLink]="['notes/', note.id]">
-  <div style="padding-top: 10px" *ngIf="notes.length > 0; else elseBlock1">
+  <div style="padding-top: 10px" *ngIf="notes.length > 0">
     <h5 *ngIf="note.title; else elseBlock">{{note.title}}</h5>
     <ng-template #elseBlock>
       <h5>Không tiêu đề</h5>
@@ -18,8 +18,22 @@
 <a href="">
   <div>
     <ng-template #elseBlock1>
-      <h4>Oops... Hiện tại bạn chưa có note nào</h4>
-      <p>Hãy <a href=""><strong>tạo note mới</strong></a> ngay để trải nghiệm</p>
+      <div style="margin-top: 20px">
+        <h3>All notes</h3>
+        <p>0 note</p>
+        <hr>
+      </div>
+      <div style="justify-content: space-between">
+        <div></div>
+        <div style="text-align: center; margin-top: 100px">
+          <img src="../../../../assets/images/no%20note.png" alt="No note">
+          <h4>Hiện tại bạn chưa có note nào</h4>
+          <p>Hãy nhấn nút  <a href="" >
+            <strong style="color: green"><i class="fa fa-plus"></i> tạo note mới</strong>
+          </a> ở thanh chức năng ngay để bắt đầu trải nghiệm</p>
+        </div>
+        <div></div>
+      </div>
     </ng-template>
   </div>
 </a>

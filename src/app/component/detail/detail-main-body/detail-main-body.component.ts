@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, EventEmitter, OnChanges, OnInit, Output, SimpleChanges} from '@angular/core';
 import {NoteService} from '../../../service/note.service';
 import {ActivatedRoute, Router} from '@angular/router';
 import {Note} from '../../../model/Note';
@@ -10,27 +10,41 @@ import {FormBuilder, FormControl, FormGroup} from '@angular/forms';
   templateUrl: './detail-main-body.component.html',
   styleUrls: ['./detail-main-body.component.scss']
 })
-export class DetailMainBodyComponent implements OnInit {
+export class DetailMainBodyComponent implements OnInit, OnChanges {
   noteDetail: StandardRespond;
   updateForm: FormGroup;
   note: Note;
+  id: number;
 
   constructor(private noteService: NoteService, private router: Router,
               private route: ActivatedRoute) {
   }
 
   ngOnInit() {
-    this.listNoteDetailById();
+    this.route.params.subscribe(queryParams => {
+      console.log('this.route.queryParams.subscribe', queryParams);
+      this.id = queryParams.id;
+      this.listNoteDetailById(this.id);
+    });
+    const id = +this.route.snapshot.paramMap.get('id');
+    this.listNoteDetailById(id);
     this.updateForm = new FormGroup({
       title: new FormControl(''),
       content: new FormControl('')
     });
   }
 
-  listNoteDetailById() {
-    const id = +this.route.snapshot.paramMap.get('id');
+  ngOnChanges(changes: SimpleChanges): void {
+    console.log('ngOnChanges:changes', changes);
+    if ('id' in changes) {
+      this.listNoteDetailById(this.id);
+    }
+  }
+
+  listNoteDetailById(id: number) {
+    console.log('listNoteDetailById', id);
     this.noteService.getNoteInfoById(id).subscribe(data => {
-        this.noteDetail = data;
+        this.noteDetail = {};
         this.noteDetail.data = {
           content: data.content, id: data.id, title: data.title
         };
@@ -43,10 +57,15 @@ export class DetailMainBodyComponent implements OnInit {
 
   onSubmit() {
     const id = +this.route.snapshot.paramMap.get('id');
-    this.noteService.updateNote(id, this.updateForm).subscribe(data => {
-        this.note.title = JSON.stringify(data.data.title);
-        this.note.content = JSON.stringify(data.data.content);
-        console.log('success');
+    const {title, content} = this.updateForm.controls; // destructuring assignment
+    const note: Note = {
+      id,
+      title: title.value,
+      content: content.value,
+    };
+    this.noteService.updateNote(id, note).subscribe(data => {
+        console.log('success', data);
+        this.noteService.onNoteUpdate.next(id);
       },
       error => {
         console.log(error);

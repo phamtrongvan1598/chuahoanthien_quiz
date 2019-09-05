@@ -41,8 +41,8 @@
     </div>
   </div>
 </div>
-<hr>
-<div>
+<hr> <!--chia dòng-->
+<div *ngIf="noteDetail && noteDetail.data">
   <form class="example-form m-5" [formGroup]="updateForm" (ngSubmit)="onSubmit()">
     <div>
       <mat-form-field class="example-full-width">

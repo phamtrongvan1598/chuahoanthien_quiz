@@ -17,6 +17,9 @@ export class DetailListComponent implements OnInit {
 
   ngOnInit() {
     this.listAllNotesByUser();
+    this.noteService.onNoteUpdate.subscribe( updateId => {
+      this.listAllNotesByUser();
+    });
   }
 
   listAllNotesByUser() {

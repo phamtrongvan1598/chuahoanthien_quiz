@@ -1,9 +1,7 @@
 import {Injectable} from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
-import {Observable} from 'rxjs';
+import {Observable, Subject} from 'rxjs';
 import {Note} from '../model/Note';
-import {StandardRespond} from '../model/StandardRespond';
-import {FormGroup} from '@angular/forms';
 
 const httpOption = {
   headers: new HttpHeaders({'Content-Type': 'application/json'})
@@ -16,6 +14,7 @@ export class NoteService {
   private ownerResource = 'http://localhost:8080/api/owner';
   private readonly API_URL = 'http://localhost:8080/api/owner/create-note';
   imageUrls: string[] = [];
+  public onNoteUpdate = new Subject<number>();
 
   constructor(private http: HttpClient) {
   }
@@ -32,7 +31,7 @@ export class NoteService {
     return this.http.delete(this.ownerResource + '/' + id);
   }
 
-  updateNote(id: number, data: FormGroup): Observable<any> {
+  updateNote(id: number, data: Note): Observable<any> {
     return this.http.put<any>(this.ownerResource + '/note' + '/' + id, data);
   }
 
