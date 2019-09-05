@@ -1,9 +1,9 @@
-import {Component, EventEmitter, OnChanges, OnInit, Output, SimpleChanges} from '@angular/core';
+import {Component, OnChanges, OnInit, SimpleChanges} from '@angular/core';
 import {NoteService} from '../../../service/note.service';
 import {ActivatedRoute, Router} from '@angular/router';
 import {Note} from '../../../model/Note';
 import {StandardRespond} from '../../../model/StandardRespond';
-import {FormBuilder, FormControl, FormGroup} from '@angular/forms';
+import {FormControl, FormGroup} from '@angular/forms';
 
 @Component({
   selector: 'app-detail-main-body',
@@ -76,6 +76,7 @@ export class DetailMainBodyComponent implements OnInit, OnChanges {
     const id = +this.route.snapshot.paramMap.get('id');
     this.noteService.deleteNote(id).subscribe(data => {
         console.log('success');
+        console.log(data);
         window.location.replace('api/owner');
       },
       error => {
