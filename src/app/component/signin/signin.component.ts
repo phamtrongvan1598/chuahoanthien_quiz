@@ -12,7 +12,6 @@ import {HttpHeaders} from '@angular/common/http';
 })
 export class SigninComponent implements OnInit {
   signinForm: FormGroup;
-  isSignedIn = false;
 
   constructor(private fb: FormBuilder, private authService: AuthService,
               private router: Router) {
@@ -37,15 +36,12 @@ export class SigninComponent implements OnInit {
           {
             Authorization: `Bearer ${this.authService.token}`,
             'Content-Type': 'application/json'
-          }
-        );
+          });
         if (next.accessToken) {
-          this.isSignedIn = true;
           this.router.navigateByUrl('/api/owner');
         }
         console.log(next.accessToken);
-      }
-    );
+      });
   }
 
   get username() {

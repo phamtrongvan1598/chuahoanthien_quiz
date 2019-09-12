@@ -2,7 +2,7 @@ import {NgModule} from '@angular/core';
 import {Routes, RouterModule} from '@angular/router';
 import {SignupComponent} from './component/signup/signup.component';
 import {SigninComponent} from './component/signin/signin.component';
-import {MainBodyComponent} from './component/main-body/main-body.component';
+import {MainBodyComponent} from './component/main/main-body/main-body.component';
 import {DetailSidenavComponent} from './component/detail/detail-sidenav/detail-sidenav.component';
 import {DetailListComponent} from './component/detail/detail-list/detail-list.component';
 import {DetailMainBodyComponent} from './component/detail/detail-main-body/detail-main-body.component';
