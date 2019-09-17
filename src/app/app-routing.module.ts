@@ -6,13 +6,12 @@ import {MainBodyComponent} from './component/main/main-body/main-body.component'
 import {DetailSidenavComponent} from './component/detail/detail-sidenav/detail-sidenav.component';
 import {DetailMainBodyComponent} from './component/detail/detail-main-body/detail-main-body.component';
 import {ProfileUserComponent} from './component/profile-user/profile-user.component';
-import {ResetPasswordComponent} from './component/reset-password/reset-password.component';
 
 
 const routes: Routes = [
   {path: '', component: MainBodyComponent},
   {path: 'profileUser', component: ProfileUserComponent},
-  {path: 'confirmPassword', component: ResetPasswordComponent},
+  // {path: 'confirmPassword', component: ResetPasswordComponent},
   {path: 'api/auth/signup', component: SignupComponent},
   {path: 'api/auth/signin', component: SigninComponent},
   {

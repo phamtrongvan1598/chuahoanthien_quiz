@@ -30,7 +30,6 @@ import {environment} from '../environments/environment';
 import { UploadFileComponent } from './component/upload-file/upload-file.component';
 import {AuthInterceptorsService} from './auth/auth-interceptors.service';
 import {Router, RouterModule} from '@angular/router';
-import { ResetPasswordComponent } from './component/reset-password/reset-password.component';
 import { ProfileUserComponent } from './component/profile-user/profile-user.component';
 
 @NgModule({
@@ -47,7 +46,6 @@ import { ProfileUserComponent } from './component/profile-user/profile-user.comp
     DetailListComponent,
     DetailMainBodyComponent,
     UploadFileComponent,
-    ResetPasswordComponent,
     ProfileUserComponent,
   ],
   imports: [
