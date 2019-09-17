@@ -2,9 +2,12 @@
   width: 800px;
   height: 500px;
   background: white;
-  border-radius: 15%;
+  border-radius: 10%;
+  border: double 5px black;
 }
 #account-information{
-  margin: 50px 0px 50px 0px ;
-
+  margin: 20px 0px 0px 0px ;
+}
+.input-group-text{
+  width: 120px;
 }

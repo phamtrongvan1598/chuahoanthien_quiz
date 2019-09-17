@@ -9,19 +9,58 @@
     </div>
   </nav>
 </header>
-<div style="height: 50px"></div>
+<div style="height: 100px"></div>
 <div class="container" id="profileuser">
   <div class="row">
     <div class="col-4"><img src="../../../../assets/images/pic03.jpg" alt=""
                             style="width: 200px; border-radius: 100%; margin-top: 50%">
     </div>
     <div class="col-8" id="account-information">
-      Username: {{username}} <br>
-      <input type="text" [(ngModel)]="user.firstName">
-      <input type="password" [(ngModel)]="oldPasword">
-    <button (click)="updateProfile()" >Cập nhật</button>
 
+      <div class="card-header"
+           style="text-align: center;
+                  font-size: 18px;
+                  border-radius: 15px;
+                  background: #fff914">UserName: {{username}}</div>
+      <hr>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text">FistName</span>
+        </div>
+        <input type="text" class="form-control" [(ngModel)]="user.firstName">
+      </div>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text">LastName</span>
+        </div>
+        <input type="text" class="form-control" [(ngModel)]="user.lastName">
+      </div>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text">Email</span>
+        </div>
+        <input type="text" class="form-control" [(ngModel)]="user.email">
+      </div>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text">Address</span>
+        </div>
+        <input type="text" class="form-control" [(ngModel)]="user.address">
+      </div>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text">PhoneNumber</span>
+        </div>
+        <input type="text" class="form-control" [(ngModel)]="user.phoneNumber">
+      </div>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text">Password</span>
+        </div>
+        <input type="password" class="form-control">
+      </div>
 
+      <button (click)="updateProfile()">Cập nhật</button>
     </div>
   </div>
 </div>
