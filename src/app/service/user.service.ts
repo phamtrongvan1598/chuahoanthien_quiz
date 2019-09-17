@@ -13,6 +13,10 @@ export class UserService {
   constructor(private http: HttpClient) {
   }
 
+  authenticate(user): Observable<any> {
+    return this.http.post<any>(this.API_URL, user);
+  }
+
   register(user: User): Observable<User> {
     return this.http.post<User>(this.API_URL, user);
   }

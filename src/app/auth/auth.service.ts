@@ -17,9 +17,14 @@ export class AuthService {
   username: string;
   header: HttpHeaders;
 
+  authenticate(user): Observable<any> {
+    return this.httpClient.post<any>(this.API_URL, user);
+  }
+
   signin(signinForm: FormGroup): Observable<any> {
     return this.httpClient.post(this.API_URL, JSON.stringify(signinForm), httpOptions);
   }
+
   resetPassword(resetPasswordForm: FormGroup): Observable<any> {
     return this.httpClient.post(this.RESET_PASSWORD_API_URL, JSON.stringify(resetPasswordForm), httpOptions);
   }
@@ -34,4 +39,6 @@ export class AuthService {
     })
     ;
   }
+
+
 }

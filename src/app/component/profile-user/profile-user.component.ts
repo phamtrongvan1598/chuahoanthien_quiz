@@ -1,61 +1,65 @@
 import {Component, OnInit} from '@angular/core';
-import {AbstractControl, FormBuilder, FormGroup, Validators} from '@angular/forms';
-import {AuthService} from '../../auth/auth.service';
-import {ActivatedRoute, Router} from '@angular/router';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {UserProfileService} from '../../service/user-profile.service';
+import {ActivatedRoute, Router} from '@angular/router';
+import {AuthService} from '../../auth/auth.service';
 import {User} from '../../model/User';
+import {UserService} from '../../service/user.service';
 
-function comparePassword(c: AbstractControl) {
-  const v = c.value;
-  return (v.password === v.confirmPassword) ? null : {
-    passwordnotmatch: true
-  };
-}
 @Component({
-  selector: 'app-reset-password',
-  templateUrl: './reset-password.component.html',
-  styleUrls: ['./reset-password.component.scss']
+  selector: 'app-profile-user',
+  templateUrl: './profile-user.component.html',
+  styleUrls: ['./profile-user.component.scss']
 })
-export class ResetPasswordComponent implements OnInit {
-  username: string;
-  registerForm: FormGroup;
+export class ProfileUserComponent implements OnInit {
+
+  username;
+  email;
+  address;
+  firstName;
+  lastName;
+  phoneNumber: string;
+  // phoneNumber: number;
   user: Partial<User>;
   oldPasword: string;
-  newPassword: string;
   status: string;
   loginForm: FormGroup;
+
 
   constructor(private  userProfileService: UserProfileService,
               private  route: ActivatedRoute,
               private router: Router,
               private formBuilder: FormBuilder,
               private authService: AuthService,
-              private fb: FormBuilder) {
+              private userService: UserService) {
+    this.user = {
+      username: '',
+      email: '',
+      address: '',
+      phoneNumber: '',
+      firstName: '',
+      lastName: ''
+    };
   }
 
   ngOnInit() {
-    this.username = localStorage.getItem('currentUser');
-    this.registerForm = this.fb.group({
-      confirm: ['', [Validators.required, Validators.minLength(6)]],
-      pwGroup: this.fb.group({
-        password: ['', [Validators.required, Validators.minLength(6)]],
-        confirmPassword: ['', [Validators.required, Validators.minLength(6)]]
-      }, {validator: comparePassword}),
-    });
+    this.username = localStorage.getItem('username');
+    this.email = localStorage.getItem('email');
+    this.address = localStorage.getItem('address');
+    this.phoneNumber = localStorage.getItem('phoneNumber');
+    this.firstName = localStorage.getItem('firstName');
+    this.lastName = localStorage.getItem('lastName');
     this.userProfileService.getUserCurrent().subscribe(data => {
       this.user = data;
     });
   }
 
-  updatePassword() {
+  updateProfile() {
     this.user.password = this.oldPasword;
     this.userProfileService.confirmPaswordUser(this.oldPasword + '').subscribe(next => {
-      this.status = next.message;
-      if (this.status === 'confirm Succssess') {
+      if (next.message === 'confirm Succssess') {
         this.status = '';
-        this.user.password = this.newPassword;
         this.userProfileService.updateUser(this.user).subscribe(data => {
-          alert('Ban da update thanh cong');
           this.username = data.username;
           localStorage.setItem('currentUser', data.username);
           // Tạo form đem vào service login để lấy token mới
@@ -72,6 +76,8 @@ export class ResetPasswordComponent implements OnInit {
         return;
       }
     });
-    // alert('Bạn nhập mật khẩu hiện tại không chính xác');
+
+
   }
+
 }

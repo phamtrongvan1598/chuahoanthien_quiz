@@ -31,6 +31,7 @@ import { UploadFileComponent } from './component/upload-file/upload-file.compone
 import {AuthInterceptorsService} from './auth/auth-interceptors.service';
 import {Router, RouterModule} from '@angular/router';
 import { ResetPasswordComponent } from './component/reset-password/reset-password.component';
+import { ProfileUserComponent } from './component/profile-user/profile-user.component';
 
 @NgModule({
   declarations: [
@@ -47,6 +48,7 @@ import { ResetPasswordComponent } from './component/reset-password/reset-passwor
     DetailMainBodyComponent,
     UploadFileComponent,
     ResetPasswordComponent,
+    ProfileUserComponent,
   ],
   imports: [
     BrowserModule,

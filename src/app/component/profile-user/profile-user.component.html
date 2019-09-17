@@ -1,0 +1,27 @@
+<header id="header">
+  <a class="logo" href="/api/owner"><img src="../../../../assets/images/logo_transparent.png" alt="Logo"></a>
+  <div><b style="font-size: 40px; color: white"><i>Mind Sicker</i> </b></div>
+  <nav>
+    <div style="border: 2px solid red; border-radius: 10px"><img src="../../../../assets/images/pic03.jpg" alt=""
+                                                                 style="max-width: 40px; border-radius: 100%; margin-left: 3px">
+      <span style="color: white;margin: 10px 10px 10px 10px">
+        <i style="font-size: 18px">{{username}}</i></span>
+    </div>
+  </nav>
+</header>
+<div style="height: 50px"></div>
+<div class="container" id="profileuser">
+  <div class="row">
+    <div class="col-4"><img src="../../../../assets/images/pic03.jpg" alt=""
+                            style="width: 200px; border-radius: 100%; margin-top: 50%">
+    </div>
+    <div class="col-8" id="account-information">
+      Username: {{username}} <br>
+      <input type="text" [(ngModel)]="user.firstName">
+      <input type="password" [(ngModel)]="oldPasword">
+    <button (click)="updateProfile()" >Cập nhật</button>
+
+
+    </div>
+  </div>
+</div>
