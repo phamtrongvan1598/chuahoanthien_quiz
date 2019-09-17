@@ -13,11 +13,14 @@ export class DetailSidenavComponent implements OnInit {
   note: Partial<Note>;
   url = 'assets/js/sidenav.js';
   loadAPI;
+  checkUserName: boolean;
+  username: string;
 
   constructor(private userService: UserService, private noteService: NoteService, private router: Router) {
   }
 
   ngOnInit() {
+    this.username = localStorage.getItem('username');
     this.note = {
       title: '',
       content: ''
@@ -53,5 +56,13 @@ export class DetailSidenavComponent implements OnInit {
         console.log('error');
       }
     );
+  }
+
+  onUserName() {
+    this.checkUserName = true;
+  }
+
+  offUserName() {
+    this.checkUserName = false;
   }
 }

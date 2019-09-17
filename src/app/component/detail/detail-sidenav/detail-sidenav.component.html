@@ -3,15 +3,18 @@
                        style=" width: 65px; background-color: #1C1C1C; justify-content: space-between">
     <div>
       <div class="ml-2 mt-3">
-        <a href="" matTooltip="Tài khoản" matTooltipPosition="right" type="button" id="dropdownMenuMenu" data-toggle="dropdown"
+        <a href="" matTooltip="Tài khoản" matTooltipPosition="right" type="button" id="dropdownMenuMenu"
+           data-toggle="dropdown"
            aria-haspopup="true" aria-expanded="false">
           <img src="../../../../assets/images/pic03.jpg" alt=""
                style="max-width: 40px; border-radius: 100%; margin-left: 3px"></a>
+        <span *ngIf="checkUserName"><i style="font-size: 18px">{{username}}</i></span>
         <div class="dropdown-menu" aria-labelledby="dropdownMenuMenu">
           <button class="dropdown-item" type="button">Cài đặt</button>
           <button class="dropdown-item" type="button">Trợ giúp</button>
           <button class="dropdown-item" type="button">Có gì hot?</button>
           <button class="dropdown-item" type="button">Về phiên bản cũ hơn</button>
+          <button class="dropdown-item" type="button">Đổi mật khẩu</button>
           <hr>
           <button class="dropdown-item" type="button" (click)="signout()">Đăng xuất</button>
 
@@ -36,7 +39,7 @@
       </div>
       <div class="btn-group ml-3" role="group" aria-label="Basic example" id="newNoteE">
         <form (ngSubmit)="onSubmit()">
-        <button style="width: 150px; border-top-left-radius: 50px; border-bottom-left-radius: 50px"
+          <button style="width: 150px; border-top-left-radius: 50px; border-bottom-left-radius: 50px"
                   type="submit" class="btn btn-success"><i class="fa fa-plus"></i> Tạo Note mới
           </button>
           <button style="border-top-right-radius: 50px; border-bottom-right-radius: 50px"
@@ -129,11 +132,13 @@
     <div>
       <div>
         <button mat-button matTooltip="Thu nhỏ thanh hỗ trợ"
-                matTooltipPosition="right" id="dispand"><i class="fa fa-angle-double-left"></i></button>
+                matTooltipPosition="right" id="dispand" (click)="offUserName()"><i class="fa fa-angle-double-left"></i>
+        </button>
       </div>
       <div>
         <button mat-button matTooltip="Mở rộng thanh hỗ trợ"
-                matTooltipPosition="right" id="expand"><i class="fa fa-angle-double-right"></i></button>
+                matTooltipPosition="right" id="expand" (click)="onUserName()"><i class="fa fa-angle-double-right"></i>
+        </button>
       </div>
     </div>
   </mat-sidenav-content>
