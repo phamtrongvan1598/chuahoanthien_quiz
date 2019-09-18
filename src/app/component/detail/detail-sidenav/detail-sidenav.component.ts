@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {UserService} from '../../../service/user.service';
 import {NoteService} from '../../../service/note.service';
 import {Note} from '../../../model/Note';
-import {Router} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 
 @Component({
   selector: 'app-detail-sidenav',
@@ -15,11 +15,22 @@ export class DetailSidenavComponent implements OnInit {
   loadAPI;
   checkUserName: boolean;
   username: string;
+  notes: Note[] = [];
+  filteredNotes: Note[] = [];
 
-  constructor(private userService: UserService, private noteService: NoteService, private router: Router) {
+  constructor(private userService: UserService,
+              private noteService: NoteService,
+              private route: ActivatedRoute,
+              private router: Router) {
   }
 
   ngOnInit() {
+    this.noteService.getListNotesByUser().subscribe(
+      next => {
+        this.notes = next;
+        this.filteredNotes = this.notes;
+      }
+    );
     this.username = localStorage.getItem('username');
     this.note = {
       title: '',
@@ -64,5 +75,9 @@ export class DetailSidenavComponent implements OnInit {
 
   offUserName() {
     this.checkUserName = false;
+  }
+
+  search(key) {
+    this.filteredNotes = this.notes.filter(note => note.title.toLowerCase().includes(key.toLowerCase()));
   }
 }

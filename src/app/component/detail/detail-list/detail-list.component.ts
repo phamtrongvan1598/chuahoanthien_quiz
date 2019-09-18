@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {NoteService} from '../../../service/note.service';
 import {Note} from '../../../model/Note';
 import {ActivatedRoute} from '@angular/router';
@@ -9,15 +9,19 @@ import {ActivatedRoute} from '@angular/router';
   styleUrls: ['./detail-list.component.scss']
 })
 export class DetailListComponent implements OnInit {
+  @Input()
   notes: Note[];
   note: Note;
+  // @Input()
+  // filteredNotes: Note[] = [];
 
   constructor(private noteService: NoteService, private route: ActivatedRoute) {
   }
 
   ngOnInit() {
+    // this.notes = this.filteredNotes;
     this.listAllNotesByUser();
-    this.noteService.onNoteUpdate.subscribe( updateId => {
+    this.noteService.onNoteUpdate.subscribe(updateId => {
       this.listAllNotesByUser();
     });
   }

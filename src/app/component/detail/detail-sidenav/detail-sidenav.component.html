@@ -26,7 +26,7 @@
                 matTooltipPosition="right"><i class="fa fa-search"></i></button>
       </div>
       <mat-form-field class="ml-2 pt-2" id="searchE">
-        <input type="text" matInput id="s" placeholder="Tìm tất cả Note">
+        <input style="color: white" type="text" matInput id="s" placeholder="Tìm tất cả Note" (input)="search($event.target.value)">
         <label for="s"></label>
       </mat-form-field>
       <div id="newNote">
@@ -143,7 +143,7 @@
     </div>
   </mat-sidenav-content>
   <mat-sidenav-content class="col-md-3">
-    <app-detail-list></app-detail-list>
+    <app-detail-list [notes]="filteredNotes"></app-detail-list>
   </mat-sidenav-content>
   <mat-sidenav-content class="col-md" style="border-left: 1px solid rgba(2, 12, 36, 0.3)">
     <router-outlet></router-outlet>
