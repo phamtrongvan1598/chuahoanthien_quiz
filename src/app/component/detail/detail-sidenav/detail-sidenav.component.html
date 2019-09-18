@@ -26,7 +26,8 @@
                 matTooltipPosition="right"><i class="fa fa-search"></i></button>
       </div>
       <mat-form-field class="ml-2 pt-2" id="searchE">
-        <input style="color: white" type="text" matInput id="s" placeholder="Tìm tất cả Note" (input)="search($event.target.value)">
+        <input style="color: white" type="text" matInput id="s" placeholder="Tìm tất cả Note"
+               (input)="search($event.target.value)">
         <label for="s"></label>
       </mat-form-field>
       <div id="newNote">
@@ -132,12 +133,17 @@
     <div>
       <div>
         <button mat-button matTooltip="Thu nhỏ thanh hỗ trợ"
-                matTooltipPosition="right" id="dispand" (click)="offUserName()"><i class="fa fa-angle-double-left"></i>
+                matTooltipPosition="right"
+                id="dispand"
+                (click)="offUserName()">
+          <i class="fa fa-angle-double-left"></i>
         </button>
       </div>
       <div>
         <button mat-button matTooltip="Mở rộng thanh hỗ trợ"
-                matTooltipPosition="right" id="expand" (click)="onUserName()"><i class="fa fa-angle-double-right"></i>
+                matTooltipPosition="right" id="expand"
+                (click)="onUserName()">
+          <i class="fa fa-angle-double-right"></i>
         </button>
       </div>
     </div>
