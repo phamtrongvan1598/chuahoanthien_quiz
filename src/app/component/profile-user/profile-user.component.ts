@@ -26,7 +26,7 @@ export class ProfileUserComponent implements OnInit {
   firstName;
   lastName;
   phoneNumber;
-  oldPasword;
+  oldPassword;
   status: string;
   notification;
   convert: boolean;
@@ -77,8 +77,8 @@ export class ProfileUserComponent implements OnInit {
 
   updateProfile() {
     this.notification = !this.notification;
-    this.user.password = this.oldPasword;
-    this.userProfileService.confirmPaswordUser(this.oldPasword + '').subscribe(next => {
+    this.user.password = this.oldPassword;
+    this.userProfileService.confirmPaswordUser(this.oldPassword + '').subscribe(next => {
       if (next.message === 'confirm Succssess') {
         this.status = '';
         this.userProfileService.updateUser(this.user).subscribe(data => {
@@ -87,7 +87,7 @@ export class ProfileUserComponent implements OnInit {
           // Tạo form đem vào service login để lấy token mới
           this.loginForm = this.formBuilder.group({
             username: [data.username, Validators.required],
-            password: [this.oldPasword, Validators.required]
+            password: [this.oldPassword, Validators.required]
           });
           // Lấy lại token mới
           this.authService.authenticate(this.loginForm.value).subscribe(
@@ -105,8 +105,8 @@ export class ProfileUserComponent implements OnInit {
 
   updatePassword() {
     this.notification = !this.notification;
-    this.user.password = this.oldPasword;
-    this.userProfileService.confirmPaswordUser(this.oldPasword + '').subscribe(next => {
+    this.user.password = this.oldPassword;
+    this.userProfileService.confirmPaswordUser(this.oldPassword + '').subscribe(next => {
       this.status = next.message;
       if (this.status === 'confirm Succssess') {
         this.status = '';
@@ -117,7 +117,7 @@ export class ProfileUserComponent implements OnInit {
           // Tạo form đem vào service login để lấy token mới
           this.loginForm = this.formBuilder.group({
             username: [data.username, Validators.required],
-            password: [this.oldPasword, Validators.required]
+            password: [this.oldPassword, Validators.required]
           });
           // Lấy lại token mới
           this.authService.authenticate(this.loginForm.value).subscribe(
