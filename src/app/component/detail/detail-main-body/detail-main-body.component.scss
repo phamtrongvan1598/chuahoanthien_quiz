@@ -20,7 +20,7 @@ a {
 
 ::ng-deep .mat-focused .mat-form-field-label {
   /*change color of label*/
-  color: deepskyblue !important;
+  color: blue !important;
 }
 
 ::ng-deep .mat-form-field-label {
@@ -30,14 +30,14 @@ a {
 
 ::ng-deep.mat-form-field-underline {
   /*change color of underline*/
-  background: deepskyblue !important;
+  background: #555555 !important;
   //background: linear-gradient(to right, #59c173, #a17fe0, #5d26c1) !important;
 }
 
 ::ng-deep.mat-form-field-ripple {
   /*change color of underline when focused*/
   //background: none !important;
-  background: deepskyblue !important;
+  background: blue !important;
   }
 
   ::ng-deep.mat-input-element {
@@ -45,5 +45,5 @@ a {
   }
 
   ::ng-deep.mat-focused textarea {
-    background: transparent;
+    background: blue;
   }

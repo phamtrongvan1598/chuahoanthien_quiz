@@ -99,8 +99,6 @@ export class ProfileUserComponent implements OnInit {
         return;
       }
     });
-
-
   }
 
   updatePassword() {

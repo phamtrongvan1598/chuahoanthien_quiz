@@ -15,6 +15,7 @@ export class DetailMainBodyComponent implements OnInit, OnChanges {
   updateForm: FormGroup;
   note: Note;
   id: number;
+  date: Date;
 
   constructor(private noteService: NoteService, private router: Router,
               private route: ActivatedRoute) {
@@ -32,6 +33,7 @@ export class DetailMainBodyComponent implements OnInit, OnChanges {
       title: new FormControl(''),
       content: new FormControl('')
     });
+    this.date = new Date();
   }
 
   ngOnChanges(changes: SimpleChanges): void {
