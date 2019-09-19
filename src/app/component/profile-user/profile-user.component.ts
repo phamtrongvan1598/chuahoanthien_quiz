@@ -108,7 +108,7 @@ export class ProfileUserComponent implements OnInit {
     this.user.password = this.oldPassword;
     this.userProfileService.confirmPaswordUser(this.oldPassword + '').subscribe(next => {
       this.status = next.message;
-      if (this.status === 'confirm Succssess') {
+      if (this.status === 'confirm Success') {
         this.status = '';
         this.user.password = this.newPassword;
         this.userProfileService.updateUser(this.user).subscribe(data => {
