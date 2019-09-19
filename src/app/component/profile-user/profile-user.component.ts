@@ -91,6 +91,7 @@ export class ProfileUserComponent implements OnInit {
           });
           // Lấy lại token mới
           this.authService.authenticate(this.loginForm.value).subscribe(
+            // tslint:disable-next-line:no-shadowed-variable
             next => {
               localStorage.setItem('token', next.data.token);
             });
@@ -120,6 +121,7 @@ export class ProfileUserComponent implements OnInit {
           });
           // Lấy lại token mới
           this.authService.authenticate(this.loginForm.value).subscribe(
+            // tslint:disable-next-line:no-shadowed-variable
             next => {
               localStorage.setItem('token', next.data.token);
             });
