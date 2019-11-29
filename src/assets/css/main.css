@@ -2874,6 +2874,8 @@ ul.icons li .icon:before {
   color: #ffffff;
 }
 
+
+
 #banner a {
   color: #ce1b28;
 }
@@ -3095,7 +3097,7 @@ ul.icons li .icon:before {
   width: 100%;
   z-index: 1;
 }
-
+/*
 #banner:after {
   background: linear-gradient(135deg, #ce1b28 0%, #111111 74%);
   content: ' ';
@@ -3109,7 +3111,7 @@ ul.icons li .icon:before {
   width: 100%;
   z-index: 1;
 }
-
+*/
 #banner.small {
   height: 30vh !important;
   min-height: 30vh;
