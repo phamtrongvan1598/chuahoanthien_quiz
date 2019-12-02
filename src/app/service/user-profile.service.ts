@@ -10,7 +10,7 @@ import {environment} from '../../environments/environment';
 })
 export class UserProfileService {
 
-  private API_URL = environment.URL + '/api/user';
+  private API_URL = environment.URL + '/api/auth/user';
 
   constructor(private httpClient: HttpClient) {
   }

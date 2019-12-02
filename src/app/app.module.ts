@@ -31,6 +31,8 @@ import { UploadFileComponent } from './component/upload-file/upload-file.compone
 import {AuthInterceptorsService} from './auth/auth-interceptors.service';
 import {Router, RouterModule} from '@angular/router';
 import { ProfileUserComponent } from './component/profile-user/profile-user.component';
+import { ListQuestionsComponent } from './component/detail/list-questions/list-questions.component';
+import { ListKindOfQuestionsComponent } from './component/detail/list-kind-of-questions/list-kind-of-questions.component';
 
 @NgModule({
   declarations: [
@@ -47,6 +49,8 @@ import { ProfileUserComponent } from './component/profile-user/profile-user.comp
     DetailMainBodyComponent,
     UploadFileComponent,
     ProfileUserComponent,
+    ListQuestionsComponent,
+    ListKindOfQuestionsComponent,
   ],
   imports: [
     BrowserModule,
