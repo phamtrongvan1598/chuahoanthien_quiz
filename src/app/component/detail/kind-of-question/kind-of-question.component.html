@@ -1,0 +1,26 @@
+<div class="row p-0">
+  <div class="card-body px-lg-5 pt-0">
+    <div *ngIf="isSuccess" class="alert alert-success" role="alert">
+      Đã thêm danh mục thành công!
+    </div>
+    <form class="text-center" style="color: #757575;"
+          [formGroup]="kindOfQuestionForm" (ngSubmit)="onSubmit()" novalidate>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="kindOfQuestion">Thêm Danh Mục</span>
+        </div>
+        <input type="text" class="form-control"
+               placeholder="Chỗ Nhập Danh mục" aria-label="Chỗ Nhập Dạnh Mục"
+               aria-describedby="basic-addon1" formControlName="kindOfQuestion">
+      </div>
+      <div class="form-group form-check">
+        <input type="checkbox" class="form-check-input" id="materialkindOfQuestionFrom">
+        <label class="form-check-label" for="materialkindOfQuestionFrom">Đồng Ý Thêm Danh Mục</label>
+      </div>
+      <button class="btn btn-primary" type="submit">Thêm Danh Mục Câu Hỏi</button>
+      <button type="submit" class="btn btn-secondary" routerLink="/api/owner">Thoát</button>
+      <button type = "button" class="btn btn-primary" routerLink="api/owner/list-kind-of-question">List Kind of question</button>
+    </form>
+
+  </div>
+</div>

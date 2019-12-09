@@ -31,8 +31,10 @@ import { UploadFileComponent } from './component/upload-file/upload-file.compone
 import {AuthInterceptorsService} from './auth/auth-interceptors.service';
 import {Router, RouterModule} from '@angular/router';
 import { ProfileUserComponent } from './component/profile-user/profile-user.component';
-import { ListQuestionsComponent } from './component/detail/list-questions/list-questions.component';
-import { ListKindOfQuestionsComponent } from './component/detail/list-kind-of-questions/list-kind-of-questions.component';
+import { KindOfQuestionComponent } from './component/detail/kind-of-question/kind-of-question.component';
+import { ListKindOfQuestionComponent } from './component/detail/list-kind-of-question/list-kind-of-question.component';
+import { EditKindOfQuestionComponent } from './component/detail/edit-kind-of-question/edit-kind-of-question.component';
+
 
 @NgModule({
   declarations: [
@@ -49,8 +51,9 @@ import { ListKindOfQuestionsComponent } from './component/detail/list-kind-of-qu
     DetailMainBodyComponent,
     UploadFileComponent,
     ProfileUserComponent,
-    ListQuestionsComponent,
-    ListKindOfQuestionsComponent,
+    KindOfQuestionComponent,
+    ListKindOfQuestionComponent,
+    EditKindOfQuestionComponent,
   ],
   imports: [
     BrowserModule,

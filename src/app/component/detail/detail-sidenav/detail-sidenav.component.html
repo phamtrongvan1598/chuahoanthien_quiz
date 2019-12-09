@@ -45,7 +45,7 @@
       <div class="btn-group ml-3" role="group" aria-label="Basic example" id="newNoteE">
         <form (ngSubmit)="onSubmit()">
           <button style="width: 150px; border-top-left-radius: 50px; border-bottom-left-radius: 50px"
-                  type="submit" class="btn btn-success"><a href="api/owner/list-question">tao moi</a>
+                  type="submit" class="btn btn-success"><a routerLink="api/owner">tao moi</a>
           </button>
 <!--          <button style="border-top-right-radius: 50px; border-bottom-right-radius: 50px"-->
 <!--                  type="button" class="btn btn-success dropdown-toggle"-->
@@ -65,6 +65,11 @@
 <!--            <a class="dropdown-item" href="#"><i class="fa fa-sticky-note"></i> Phản ánh hàng ngày</a>-->
 <!--          </div>-->
         </form>
+      </div>
+      <div>
+        <button style="width: 150px; border-top-left-radius: 50px; border-bottom-left-radius: 50px"
+                type="submit" class="btn btn-success">  <a [routerLink]="['/api/owner/create-kindOfQuestion']">Create Kind of question</a>
+        </button>
       </div>
       <div class="mt-3 pt-2" id="shortcut">
         <button mat-button matTooltip="Lối tắt"
